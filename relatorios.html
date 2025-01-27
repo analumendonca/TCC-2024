@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="PT-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PROF</title>
+    <link rel="stylesheet" href="relatorios.css">
+</head>
+<body>
+    <header>
+        <div class="header-left"> 
+            <img class="logo-icon" alt="Logo" src="logoprof.svg">
+            <nav>
+                <ul class="header-left-ul">
+                    <a href="dashborad.html">Dashboard</a>
+                    <a id="pageatual" href="relatorios.html"> > Relatórios</a>
+                </ul>
+            </nav>
+        </div>
+        <nav>
+            <ul class="header-ul">
+                <button id="themeToggle">
+                    <img id="themeIcon" src="sol.svg" alt="Sun Icon">
+                </button>
+
+                <button class="notification-button">
+                    <img class="iconoirbell-notification" alt="Notificações" src="icon-noti.svg">
+                </button>
+
+                <button class="configuração-button">
+                    <img class="summer-icon" alt="Ícone de verão" src="summer.svg">
+                </button>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="body">
+        <nav id="sidebar">
+            <div id="sidebar_content">
+                <div id="user">
+                    <img src="image.png" id="user_avatar" alt="Avatar">
+        
+                    <p id="user_infos">
+                        <span class="item-description">
+                            Fulano de Tal
+                        </span>
+                        <span class="item-description">
+                            Lorem Ipsum
+                        </span>
+                    </p>
+                </div>
+        
+                <ul id="side_items">
+                    <li class="side-item">
+                        <a href="dashborad.html">
+                            <i><img src="dashhome.svg" alt=""></i>
+                            <span class="item-description">
+                                Dashboard
+                            </span>
+                        </a>
+                    </li>
+        
+                    <li class="side-item">
+                        <a href="disciplinas.html">
+                            <i><img src="discbook.svg" alt=""></i>
+                            <span class="item-description">
+                                Disciplinas
+                            </span>
+                        </a>
+                    </li>
+        
+                    <li class="side-item">
+                        <a href="registro_de_presencas.html">
+                            <i><img src="prescheck.svg" alt=""></i>
+                            <span class="item-description">
+                                Registro de Presenças
+                            </span>
+                        </a>
+                    </li>
+        
+                    <li class="side-item">
+                        <a href="lancamento_notas.html">
+                            <i><img src="notasdoc.svg" alt=""></i>
+                            <span class="item-description">
+                                Lançamento de Notas
+                            </span>
+                        </a>
+                    </li>
+        
+                    <li class="side-item">
+                        <a href="prog_cont.html">
+                            <i><img src="progpen.svg" alt=""></i>
+                            <span class="item-description">
+                                Programação de Conteúdos
+                            </span>
+                        </a>
+                    </li>
+ 
+                    <li class="side-item">
+                        <a href="diarioprof.html">
+                            <i><img src="diarioavatar.svg" alt=""></i>
+                            <span class="item-description">
+                                Diário do Professor
+                            </span>
+                        </a>
+                    </li>
+                    <li class="side-item">
+                        <a href="alunos.html">
+                            <i><img src="crianalunos.svg" alt=""></i>
+                            <span class="item-description">
+                                Alunos
+                            </span>
+                        </a>
+                    </li>
+                    <li class="side-item active">
+                        <a href="relatorios.html">
+                            <i><img src="relabox.svg" alt=""></i>
+                            <span class="item-description">
+                                Relatórios
+                            </span>
+                        </a>
+                    </li>
+                </ul>
+        
+                <button id="open_btn">
+                    <i id="open_btn_icon">></i>
+                </button>
+            </div>
+        </nav>
+        <main>
+            <div class="titulo">
+                <h2>Relatórios</h2> 
+                <button id="help" type="submit" onclick="handlePopup(true)">?</button>
+            </div>
+            <section class="welcome-section">
+                <div class="welcome-container">
+                    <div class="welcome-container-1">
+                        <h3>Relatórios</h3>
+                        <p>Acesse os últimos relatórios aqui.</p>
+                    </div>
+                    <div class="welcome-container-2">
+                        <img id="professora" src="moca.png" alt="">
+                    </div>
+                </div>
+            </section>
+            <section class="filtros">
+                <div class="dropdowns">
+                    <select id="salas" class="dropdown" onchange="filterTable()">
+                        <option value="">Todas as Turmas</option>
+                        <option value="3i">3I</option>
+                        <option value="3j">3J</option>
+                        <option value="3k">3K</option>
+                    </select>
+                </div>
+                <div class="dropdowns">
+                    <select class="dropdown" id="bimestres" onchange="filterTable()">
+                        <option value="">Todos os Bimestres</option>
+                        <option value="1">1BIM</option>
+                        <option value="2">2BIM</option>
+                        <option value="3">3BIM</option>
+                        <option value="4">4BIM</option>
+                    </select>
+                </div>
+                <div class="dropdowns">
+                    <input type="date" class="dropdown" id="data" onchange="filterTable()">
+                </div>
+            </section>
+            <section> 
+                <div class="container">
+                    <div class="container-top-bar">
+                        <button class="add-report-btn" onclick="openModal()">Adicionar Relatório</button>
+                        <input type="search" placeholder="Procurar pelo Nome" id="procure" onkeyup="filterTable()">
+                    </div>
+                    <table id="reportTable">
+                        <thead>
+                            <th>Título</th>
+                            <th>Bimestre</th>
+                            <th>Data</th>
+                            <th>Turmas</th>
+                            <th>Visualizar</th>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>RELATÓRIO DE JANEIRO - TURMA3I</td>
+                                <td>1BIM</td>
+                                <td>2024-01-30</td>
+                                <td>3I</td>
+                                <td><button class="visu">Visualizar</button></td>
+                            </tr>
+                            <tr>
+                                <td>RELATÓRIO DE JANEIRO - TURMA3J</td>
+                                <td>1BIM</td>
+                                <td>2024-01-30</td>
+                                <td>3J</td>
+                                <td><button class="visu">Visualizar</button></td>
+                            </tr>
+                            <tr>
+                                <td>RELATÓRIO DE JUNHO -TURMA3I</td>
+                                <td>2BIM</td>
+                                <td>2024-06-30</td>
+                                <td>3I</td>
+                                <td><button class="visu">Visualizar</button></td>
+                            </tr>
+                            <tr>
+                                <td>RELATÓRIO DE MAIO -TURMA3K</td>
+                                <td>2BIM</td>
+                                <td>2024-05-30</td>
+                                <td>3K</td>
+                                <td><button class="visu">Visualizar</button></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+            <div id="reportModal" class="modal">
+                <div class="modal-content">
+                    <span class="close" onclick="closeModal()">&times;</span>
+                    <h2>Adicionar Relatório</h2>
+                    <form id="reportForm">
+                        <label for="reportTitle">Título do Relatório:</label>
+                        <input type="text" id="reportTitle" name="reportTitle" required class="input">
+            
+                        <label for="reportBimester">Bimestre:</label>
+                        <input type="text" id="reportBimester" name="reportBimester" required class="input">
+            
+                        <label for="reportDate">Data:</label>
+                        <input type="date" id="reportDate" name="reportDate" required class="input">
+            
+                        <label for="reportClass">Turma:</label>
+                        <input type="text" id="reportClass" name="reportClass" required class="input">
+            
+                        <label for="reportFile">Upload de Arquivo (PDF):</label>
+                        <input type="file" id="reportFile" name="reportFile" accept="application/pdf" required>
+            
+                        <button type="submit">Salvar Relatório</button>
+                    </form>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <section id="popup" class="popup">
+        <div class="modal-help">
+            <h2>Precisa de Ajuda?</h2>
+            <hr>
+            <div class="modal-help-content">   
+                <p>Bem vindo(a) a página de acesso aos Relatórios! Aqui você pode acessar e enviar relatórios para a coordenação.
+                </p>
+                <hr>
+                <p>Utilize os filtros para encontrar os relatórios com facilidade</p>
+                <img src="help-filtrosrela.png" alt="barra-de-pesquisa">
+                <hr>
+                <p>Para visualizar o arquivo do relatório clique no botão "VISUALIZAR"</p>
+                <img src="help-visurela.png" alt="" style="width: 50%; align-self: center;">
+                <hr>
+                <p>Ainda com dúvidas? Contate o suporte técnico com o botão a seguir:<button id="suporte"><img src="suporte.png" alt="-"></button>
+                </p>
+            </div>
+            <button id="ok-help" onclick="handlePopup(false)" type="submit">OK</button>
+        </div>
+    </section>
+<footer>
+    <img src="tformbranco-logovetor.svg" alt="">&copy; 2024 TRANSFORMA | Todos os direitos reservados
+</footer>
+<script src="relatorios.js"></script>
+</body>
+</html>
