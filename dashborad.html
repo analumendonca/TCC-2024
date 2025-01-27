@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" media="all">
+    <link rel="stylesheet" href="dashboard.css">
+    <title>PROF</title>
+</head>
+
+<body>
+    <header> 
+        <img class="logo-icon" alt="Logo" src="logoprof.svg">
+        <nav>
+            <ul class="header-ul">
+                 <button id="themeToggle">
+                    <img id="themeIcon" src="sol.svg" alt="Sun Icon">
+                </button>
+                <button class="notification-button">
+                    <img class="iconoirbell-notification" alt="Notificações" src="icon-noti.svg">
+                </button>
+                <button class="configuração-button">
+                    <img class="summer-icon" alt="Ícone de verão" src="summer.svg">
+                </button>
+            </ul>
+        </nav>
+    </header>
+    <div class="body">
+        <nav id="sidebar">
+            <div id="sidebar_content">
+                <div id="user">
+                    <img src="image.png" id="user_avatar" alt="Avatar">
+        
+                    <p id="user_infos">
+                        <span class="item-description">
+                            Fulano de Tal
+                        </span>
+                        <span class="item-description">
+                            Lorem Ipsum
+                        </span>
+                    </p>
+                </div>
+        
+                <ul id="side_items">
+                    <li class="side-item active">
+                        <a href="dashborad.html">
+                            <i><img src="dashhome.svg" alt=""></i>
+                            <span class="item-description">
+                                Dashboard
+                            </span>
+                        </a>
+                    </li>
+        
+                    <li class="side-item">
+                        <a href="disciplinas.html">
+                            <i><img src="discbook.svg" alt=""></i>
+                            <span class="item-description">
+                                Disciplinas
+                            </span>
+                        </a>
+                    </li>
+        
+                    <li class="side-item">
+                        <a href="registro_de_presencas.html">
+                            <i><img src="prescheck.svg" alt=""></i>
+                            <span class="item-description">
+                                Registro de Presenças
+                            </span>
+                        </a>
+                    </li>
+        
+                    <li class="side-item">
+                        <a href="lancamento_notas.html">
+                            <i><img src="notasdoc.svg" alt=""></i>
+                            <span class="item-description">
+                                Lançamento de Notas
+                            </span>
+                        </a>
+                    </li>
+        
+                    <li class="side-item">
+                        <a href="prog_cont.html">
+                            <i><img src="progpen.svg" alt=""></i>
+                            <span class="item-description">
+                                Programação de Conteúdos
+                            </span>
+                        </a>
+                    </li>
+
+                    <li class="side-item">
+                        <a href="diarioprof.html">
+                            <i><img src="diarioavatar.svg" alt=""></i>
+                            <span class="item-description">
+                                Diário do Professor
+                            </span>
+                        </a>
+                    </li>
+                    <li class="side-item">
+                        <a href="alunos.html">
+                            <i><img src="crianalunos.svg" alt=""></i>
+                            <span class="item-description">
+                                Alunos
+                            </span>
+                        </a>
+                    </li>
+                    <li class="side-item">
+                        <a href="relatorios.html">
+                            <i><img src="relabox.svg" alt=""></i>
+                            <span class="item-description">
+                                Relatórios
+                            </span>
+                        </a>
+                    </li>
+                </ul>
+        
+                <button id="open_btn">
+                    <i id="open_btn_icon">></i>
+                </button>
+            </div>
+        </nav>
+        <main>
+            <!--WELCOME - BANNER PRINCIPAL-->
+            <section class="welcome">
+                <h2>Dashboard</h2>
+                <section class="welcome-section">
+                    <div class="welcome-container">
+                        <div class="welcome-container-1">
+                            <h1>Bem vindo(a) ao PROF!</h1>
+                    
+                        <p>Juntos por uma educação produtiva.</p>
+    
+                        <button class="saibamais"><a href="#">Saiba Mais</a></button>
+                        </div> 
+                        <div class="welcome-container-2">
+                            <img src="professor.png" alt="" id="professor">
+                        </div>
+                    </div>
+                    <div class="welcome-right">
+                        <input type="search" class="pesquisa-input" id="searchBar" placeholder="Pesquisar">
+                        <ul id="resultList"></ul>
+                        <button class="btn-diario"><a href="diarioprof.html"><img src="folhadobrada.svg" alt="folha">Diário do Professor</a></button>
+                    </div>
+                </section>
+            </section>
+            <h2>Turmas</h2>
+            <section class="wrapper-pastas-turmas">
+                <i id="left1"><</i>
+                <div class="carousel-pastas-turmas">
+                    <a class="btn-purple" href="turmas.html">
+                        <img class="vector" alt="Pasta Roxa" src="pastaroxa.png">
+                        <figcaption>3ºI</figcaption>
+                    </a>
+                    <a class="btn-blue" href="">
+                        <img class="vector" alt="Pasta azul" src="pastaazul.png">
+                        <figcaption>3ºJ</figcaption>
+                    </a>    
+                    <a class="btn-yellow" href="">
+                        <img class="vector" alt="Pasta amarela" src="pastaamarela.png">
+                        <figcaption>3ºK</figcaption>
+                    </a>    
+                    <a class="btn-green" href="">
+                        <img class="vector" alt="Pasta verde" src="pastaverde.png">
+                        <figcaption>2ºI</figcaption>
+                    </a>
+                    <a class="btn-pink" href="">
+                        <img class="vector" alt="Pasta rosa" src="pastarosa.png">
+                        <figcaption>2ºJ</figcaption>
+                    </a>
+                    <a class="btn-yellow" href="">
+                        <img class="vector" alt="Pasta amarela" src="pastaamarela.png">
+                        <figcaption>2ºK</figcaption>
+                    </a>
+                    <a class="btn-purple" href="">
+                        <img class="vector" alt="Pasta Roxa" src="pastaroxa.png">
+                        <figcaption>1ºI</figcaption>
+                    </a>
+                    <a class="btn-blue" href="">
+                        <img class="vector" alt="Pasta azul" src="pastaazul.png">
+                        <figcaption>1ºJ</figcaption>
+                    </a>    
+                    <a class="btn-yellow" href="">
+                        <img class="vector" alt="Pasta amarela" src="pastaamarela.png">
+                        <figcaption>1ºK</figcaption>
+                    </a>    
+                </div>
+                <i id="right1" >></i>
+            </section>
+            <h2>Disciplinas</h2>
+            <section class="wrapper-pastas-disc">
+                <i id="left2" ><</i>
+                <div class="carousel-pastas-disc">
+                    <a class="btn-purple" href="disciplinas.html">
+                        <img class="vector" alt="Pasta Roxa" src="pastaroxa.png">
+                        <figcaption>Geografia</figcaption>
+                    </a>
+                    <a class="btn-blue" href="disciplinas.html">
+                        <img class="vector" alt="Pasta azul" src="pastaazul.png">
+                        <figcaption>Matemática</figcaption>
+                    </a>    
+                    <a class="btn-yellow" href="disciplinas.html">
+                        <img class="vector" alt="Pasta amarela" src="pastaamarela.png">
+                        <figcaption>História</figcaption>
+                    </a>    
+                    <a class="btn-green" href="disciplinas.html">
+                        <img class="vector" alt="Pasta verde" src="pastaverde.png">
+                        <figcaption>Física</figcaption>
+                    </a>
+                </div>
+                <i id="right2" >></i>
+            </section>
+            <!--CALENDARIO-->
+            <section class="calendar-section">
+                <article class="calendar-container">
+                    <header class="calendar-header">
+                        <button id="prev-month" class="nav-button">&lt;</button>
+                        <time id="month-year"></time>
+                        <button id="next-month" class="nav-button">&gt;</button>
+                    </header>
+                    <div class="calendar-body-div">
+                        <table class="calendar">
+                            <thead>
+                                <tr>
+                                    <th>Dom</th>
+                                    <th>Seg</th>
+                                    <th>Ter</th>
+                                    <th>Qua</th>
+                                    <th>Qui</th>
+                                    <th>Sex</th>
+                                    <th>Sáb</th>
+                                </tr>
+                            </thead>
+                            <tbody id="calendar-body"></tbody>
+                        </table>
+                    </div>
+                </article>
+            
+                <dialog id="note-modal" class="modal">
+                    <div class="modal-content">
+                        <div>
+                            <span class="close-button">&times;</span>
+                            <h2>Adicionar Anotação</h2>
+                        </div>
+                        <textarea id="note-text" rows="7" cols="50"></textarea>
+                        <button id="save-note">Salvar</button>
+                    </div>
+                </dialog>
+            </section>
+        </main>
+    </div>
+    <script src="dashboard.js">
+
+    </script>
+
+    <footer> 
+        <img src="tformbranco-logovetor.svg" alt="">&copy; 2024 TRANSFORMA | Todos os direitos reservados
+    </footer>
+
+</body>

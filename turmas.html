@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="PT-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PROF</title>
+    <link rel="stylesheet" href="turmas.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <header>
+        <div class="header-left">
+            <img class="logo-icon" alt="Logo" src="logoprof.svg">
+            <nav>
+                <ul class="header-left-ul">
+                    <a href="dashborad.html">Dashboard</a>
+                    <a id="pageatual" href="alunos.html"> > Turma 3ºI</a>
+                </ul>
+            </nav>
+        </div>
+        <nav>
+            <ul class="header-ul">
+                <button id="themeToggle">
+                    <img id="themeIcon" src="sol.png" alt="Sun Icon">
+                </button>
+                
+                <button class="notification-button">
+                    <img class="iconoirbell-notification" alt="Notificações" src="icon-noti.svg">
+                </button>
+
+                <button class="configuração-button">
+                    <img class="summer-icon" alt="Ícone de verão" src="summer.svg">
+                </button>
+            </ul>
+        </nav>
+    </header>
+    <div class="body">
+        <nav id="sidebar">
+            <div id="sidebar_content">
+                <div id="user">
+                    <img src="image.png" id="user_avatar" alt="Avatar">
+        
+                    <p id="user_infos">
+                        <span class="item-description">
+                            Fulano de Tal
+                        </span>
+                        <span class="item-description">
+                            Lorem Ipsum
+                        </span>
+                    </p>
+                </div>
+        
+                <ul id="side_items">
+                    <li class="side-item">
+                        <a href="dashborad.html">
+                            <i><img src="dashhome.svg" alt=""></i>
+                            <span class="item-description">
+                                Dashboard
+                            </span>
+                        </a>
+                    </li>
+        
+                    <li class="side-item" active>
+                        <a href="disciplinas.html">
+                            <i><img src="discbook.svg" alt=""></i>
+                            <span class="item-description">
+                                Disciplinas
+                            </span>
+                        </a>
+                    </li>
+        
+                    <li class="side-item">
+                        <a href="registro_de_presencas.html">
+                            <i><img src="prescheck.svg" alt=""></i>
+                            <span class="item-description">
+                                Registro de Presenças
+                            </span>
+                        </a>
+                    </li>
+        
+                    <li class="side-item">
+                        <a href="lancamento_notas.html">
+                            <i><img src="notasdoc.svg" alt=""></i>
+                            <span class="item-description">
+                                Lançamento de Notas
+                            </span>
+                        </a>
+                    </li>
+        
+                    <li class="side-item">
+                        <a href="prog_cont.html">
+                            <i><img src="progpen.svg" alt=""></i>
+                            <span class="item-description">
+                                Programação de Aulas
+                            </span>
+                        </a>
+                    </li>
+
+                    <li class="side-item">
+                        <a href="#">
+                            <i><img src="diarioavatar.svg" alt=""></i>
+                            <span class="item-description">
+                                Diário do Professor
+                            </span>
+                        </a>
+                    </li>
+                    <li class="side-item">
+                        <a href="alunos.html">
+                            <i><img src="crianalunos.svg" alt=""></i>
+                            <span class="item-description">
+                                Alunos
+                            </span>
+                        </a>
+                    </li>
+                    <li class="side-item">
+                        <a href="#">
+                            <i><img src="relabox.svg" alt=""></i>
+                            <span class="item-description">
+                                Relatórios
+                            </span>
+                        </a>
+                    </li>
+                </ul>
+        
+                <button id="open_btn">
+                    <i id="open_btn_icon"> > </i>
+                </button>
+            </div>
+        </nav>
+        <main>
+            <div class="titulo">
+                <h2>Página da Turma <h2 id="t">3ºI</h2></h2>
+                <button id="help" type="submit" onclick="handlePopup(true)">?</button>
+            </div>
+            <!--WELCOME BANNER-->
+            <section class="welcome-section">
+                <div class="welcome-container">
+                    <div class="welcome-container-1">
+                        <h3>Turma 3ºI</h3>
+                        <h4>Desenvolvimento da Turma</h4>
+                        <p>Administre informações de turmas aqui.</p>
+                    </div>
+                    <div class="welcome-container-2">
+                        <img id="professora" src="pessoas.png" alt="">
+                    </div>
+                </div>
+            </section>
+
+            <!--SELECT PAGINA DA TURMA-->
+
+            <section class="wrapper-select">
+                <div class="carousel-select">
+                    <div class="carousel-select-1">
+                        <a class="btn-purple" href="">
+                            <img class="vector" alt="Pasta Roxa" src="pastaroxa.png">
+                            <figcaption>Alunos</figcaption>
+                        </a>
+                        <a class="btn-blue" href="">
+                            <img class="vector" alt="Pasta azul" src="pastaazul.png">
+                            <figcaption>Lançamento</figcaption>
+                            <figcaption>de Notas</figcaption>
+                        </a>    
+                    </div>
+                    <div class="carousel-select-2">
+                        <a class="btn-yellow" href="">
+                            <img class="vector" alt="Pasta amarela" src="pastaamarela.png">
+                            <figcaption>Registro</figcaption>
+                            <figcaption>de Presenças</figcaption>
+                        </a>    
+                        <a class="btn-green" href="">
+                            <img class="vector" alt="Pasta verde" src="pastaverde.png">
+                            <figcaption>Relatórios</figcaption>
+                        </a>
+                    </div>
+                </div>
+            </section>
+
+            <section class="graficos">
+                <h2>Desenvolvimento da Turma</h2>
+                <div class="dropdowns">
+                    <select id="materias" class="dropdown">
+                        <option value="Matemática">Matemática</option>
+                        <option value="Geografia">Geografia</option>
+                        <option value="Física">Física</option>
+                        <option value="História">História</option>
+                        <option value="Português">Português</option>
+                    </select>
+                </div>
+
+                <section class="graficos-main"></section>
+                <div class="container">
+                    <h2>Aproveitamento da Turma</h2>
+                    <form id="dataForm">
+                        <label for="totalStudents">Total de Alunos: </label>
+                        <input type="number" id="totalStudents" name="totalStudents" min="0" value="40">
+                        <br>
+                        <label for="studentsAbove6">Alunos com Notas Azuis: </label>
+                        <input type="number" id="studentsAbove6" name="studentsAbove6" min="0" value="0">
+                        <br>
+                        <button type="button" onclick="updateChart()">Atualizar Gráfico</button>
+                    </form>
+                    <div class="chart-container">
+                        <svg id="chart" viewBox="0 0 100 50">
+                            <path id="arc" fill="#FFAB77" />
+                            <text id="percentageText" x="50" y="25" text-anchor="middle" font-size="10" fill="#000"></text>
+                        </svg>
+                    </div>
+                </div>
+            
+            </section>
+        </main>
+
+    </div>
+    <section id="popup" class="popup">
+        <div class="modal-help">
+            <h2>Precisa de Ajuda?</h2>
+            <hr>
+            <div class="modal-help-content">
+                <p>Bem vindo(a) a página de disciplinas. Aqui você pode ter o acesso das funções e ferramentas para administrar suas disciplinas</p>
+                <p>Basicamente, essa página funciona como um menu principal.</p>
+                <hr>
+                <p>Para começar, basta selecionar a disciplina desejada para abrir suas ferramentas.</p>
+                <hr>
+                <p>Ainda com dúvidas? Contate o suporte técnico com o botão a seguir:<button id="suporte"><img src="suporte.png" alt="-"></button>
+                </p>
+            </div>
+            <button id="ok-help" onclick="handlePopup(false)" type="submit">OK</button>
+        </div>
+    </section>
+
+    <footer>
+        <img src="tformbranco-logovetor.svg" alt="">&copy; 2024 TRANSFORMA | Todos os direitos reservados
+    </footer>
+    <script src="turma.js"></script>
+    
+</body>
+</html>
+<!--
+
+<section class="pagina_da_turma">
+    <button class="butãoverde">
+        <img class="vector-icon" alt="Pasta verde" src="pastaverde.png">
+        <span class="texto_do_botão">Alunos</span>
+    </button>
+    <button class="butãoamarelo">
+        <img class="vector-marelo" alt="Pasta amarela" src="pastaamarela.png">
+        <span class="texto_do_botão">Registro de Presenças</span>
+    </button>  
+    <button class="butãoroxo">
+        <img class="vector-roxo" alt="Pasta roxa" src="pastaroxa.png">
+        <span class="texto_do_botão">Lançamento de Notas</span>
+    </button> 
+    <button class="butãoazul">
+        <img class="vector-azul" alt="Pasta azul" src="pastaazul.png">
+        <span class="texto_do_botão">Relatórios</span>
+    </button> 
+</section>
+
+<div class="dropdowns">
+    <select id="materias" class="dropdown">
+        <option value="Matemática">Matemática</option>
+        <option value="Geografia">Geografia</option>
+        <option value="Física">Física</option>
+        <option value="História">História</option>
+        <option value="Português">Português</option>
+    </select>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+<div class="container">
+    <h2>Aproveitamento da Turma</h2>
+    <form id="dataForm">
+        <label for="totalStudents">Total de Alunos: </label>
+        <input type="number" id="totalStudents" name="totalStudents" min="0" value="40">
+        <br>
+        <label for="studentsAbove6">Alunos com notas azuis: </label>
+        <input type="number" id="studentsAbove6" name="studentsAbove6" min="0" value="0">
+        <br>
+        <button type="button" onclick="updateChart()">Atualizar Gráfico</button>
+    </form>
+    <div class="chart-container">
+        <svg id="chart" viewBox="0 0 100 50">
+            <path id="arc" fill="#FFAB77" />
+            <text id="percentageText" x="50" y="25" text-anchor="middle" font-size="10" fill="#000"></text>
+        </svg>
+    </div>
+</div>
+
+
+</body>
+</html>
+
+-->

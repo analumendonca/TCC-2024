@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Barra de Pesquisa de HTMLs</title>
+    <style>
+        #searchBar {
+            width: 300px;
+            padding: 10px;
+            font-size: 16px;
+        }
+
+        #resultList {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        #resultList li {
+            padding: 5px;
+            border: 1px solid #ddd;
+            margin-top: -1px;
+            cursor: pointer;
+        }
+
+        #resultList li:hover {
+            background-color: #f1f1f1;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Pesquisar HTMLs</h1>
+    <input type="text" id="searchBar" placeholder="Digite o nome do HTML...">
+
+    <ul id="resultList"></ul>
+
+    <script>
+        // Lista de HTMLs
+        const htmlFiles = [
+            { name: "Alunos", url: "alunos.html" },
+            { name: "Disciplinas", url: "disciplinas.html" },
+            { name: "Diário do Professor", url: "diarioprof.html" },
+            { name: "Lançamento de Notas", url: "lancamento_notas.html" },
+            { name: "Personalizar Avaliações", url: "lancamento_notas.html" },
+            { name: "Pontuações", url: "lancamento_notas.html" },
+            { name: "Programação de Conteúdos", url:"prog_cont.html" },
+            { name: "Registro de Presenças", url: "registro_de_presencas.html" },
+            { name: "Relatórios", url: "relatorios.html" },
+            // Adicione mais arquivos conforme necessário
+        ];
+
+        const searchBar = document.getElementById('searchBar');
+        const resultList = document.getElementById('resultList');
+
+        // Função para filtrar HTMLs
+        function filterHTMLs() {
+            const searchTerm = searchBar.value.toLowerCase();
+            resultList.innerHTML = '';
+
+            htmlFiles.forEach(file => {
+                if (file.name.toLowerCase().includes(searchTerm)) {
+                    const li = document.createElement('li');
+                    li.textContent = file.name;
+                    li.onclick = () => {
+                        window.location.href = file.url;
+                    };
+                    resultList.appendChild(li);
+                }
+            });
+        }
+
+        searchBar.addEventListener('input', filterHTMLs);
+    </script>
+
+</body>
+</html>

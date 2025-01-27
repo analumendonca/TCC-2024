@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="prog_cont.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>PROF</title>
+</head>
+
+<body>
+    <header>
+        <div class="header-left"> 
+            <img class="logo-icon" alt="Logo" src="logoprof.svg">
+            <nav>
+                <ul class="header-left-ul">
+                    <a href="dashborad.html">Dashboard</a>
+                    <a id="pageatual" href="prog_cont.html"> > Programação de Conteúdos</a>
+                </ul>
+            </nav>
+        </div>
+        <nav>
+            <ul class="header-ul">
+                <button id="themeToggle">
+                    <img id="themeIcon" src="sol.svg" alt="Sun Icon">
+                </button>
+
+                <button class="notification-button">
+                    <img class="iconoirbell-notification" alt="Notificações" src="icon-noti.svg">
+                </button>
+
+                <button class="configuração-button">
+                    <img class="summer-icon" alt="Ícone de verão" src="summer.svg">
+                </button>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="body">
+        <nav id="sidebar">
+            <div id="sidebar_content">
+                <div id="user">
+                    <img src="image.png" id="user_avatar" alt="Avatar">
+        
+                    <p id="user_infos">
+                        <span class="item-description">
+                            Fulano de Tal
+                        </span>
+                        <span class="item-description">
+                            Lorem Ipsum
+                        </span>
+                    </p>
+                </div>
+        
+                <ul id="side_items">
+                    <li class="side-item">
+                        <a href="dashborad.html">
+                            <i><img src="dashhome.svg" alt=""></i>
+                            <span class="item-description">
+                                Dashboard
+                            </span>
+                        </a>
+                    </li>
+        
+                    <li class="side-item">
+                        <a href="disciplinas.html">
+                            <i><img src="discbook.svg" alt=""></i>
+                            <span class="item-description">
+                                Disciplinas
+                            </span>
+                        </a>
+                    </li>
+        
+                    <li class="side-item">
+                        <a href="registro_de_presencas.html">
+                            <i><img src="prescheck.svg" alt=""></i>
+                            <span class="item-description">
+                                Registro de Presenças
+                            </span>
+                        </a>
+                    </li>
+        
+                    <li class="side-item">
+                        <a href="lancamento_notas.html">
+                            <i><img src="notasdoc.svg" alt=""></i>
+                            <span class="item-description">
+                                Lançamento de Notas
+                            </span>
+                        </a>
+                    </li>
+        
+                    <li class="side-item active">
+                        <a href="prog_cont.html">
+                            <i><img src="progpen.svg" alt=""></i>
+                            <span class="item-description">
+                                Programação de Conteúdos
+                            </span>
+                        </a>
+                    </li>
+ 
+                    <li class="side-item">
+                        <a href="diarioprof.html">
+                            <i><img src="diarioavatar.svg" alt=""></i>
+                            <span class="item-description">
+                                Diário do Professor
+                            </span>
+                        </a>
+                    </li>
+                    <li class="side-item">
+                        <a href="alunos.html">
+                            <i><img src="crianalunos.svg" alt=""></i>
+                            <span class="item-description">
+                                Alunos
+                            </span>
+                        </a>
+                    </li>
+                    <li class="side-item">
+                        <a href="relatorios.html">
+                            <i><img src="relabox.svg" alt=""></i>
+                            <span class="item-description">
+                                Relatórios
+                            </span>
+                        </a>
+                    </li>
+                </ul>
+        
+                <button id="open_btn">
+                    <i id="open_btn_icon">></i>
+                </button>
+            </div>
+        </nav>
+        <main>
+            <div class="titulo">
+                <h2>Programação de Conteúdos</h2>
+                <button id="help" type="submit" onclick="handlePopup(true)">?</button>
+            </div>
+            <section class="welcome-section">
+                <div class="welcome-container">
+                    <div class="welcome-container-1">
+                        <h3>Programação de Conteúdos</h3>
+                        <p>Registre seu conteúdo antes de aplicar as suas aulas</p>
+                    </div>
+                    <div class="welcome-container-2">
+                        <img id="time" src="time.png" alt="">
+                    </div>
+                </div>
+            </section>
+            <h4>Selecione uma Disciplina:</h4>
+            <section class="wrapper-select">
+                <i id="left1"></i>
+                <div class="carousel-select">
+                    <button class="btn" id="btn-purple" onclick="handleFuncoes1('Geografia')">
+                        <img class="vector" alt="Pasta Roxa" src="pastaroxa.png">
+                        <figcaption>Geografia</figcaption>
+                    </button>
+                    <button class="btn" id="btn-blue" onclick="handleFuncoes1('Matemática')">
+                        <img class="vector" alt="Pasta azul" src="pastaazul.png">
+                        <figcaption>Matemática</figcaption>
+                    </button>    
+                    <button class="btn" id="btn-yellow" onclick="handleFuncoes1('História')">
+                        <img class="vector" alt="Pasta amarela" src="pastaamarela.png">
+                        <figcaption>História</figcaption>
+                    </button>    
+                    <button class="btn" id="btn-green" onclick="handleFuncoes1('Física')">
+                        <img class="vector" alt="Pasta verde" src="pastaverde.png">
+                        <figcaption>Física</figcaption>
+                    </button>
+                    
+                </div>
+                <i id="right1" >></i>
+            </section>
+
+            <!--NOTA PARA BACKEND E BANCO: AS LISTAS DE CONTEUDOS SAO A MESMA, OS FILTROS MUDAM A TABELA DE ACORDO COM A DISCIPLINA
+            SELECIONADA-->
+            <section class="disciplina-view" id="disc-1">
+                <section class="disciplina-view-header">
+                    <div class="filtros">
+                        <div class="dropdowns">
+                            <select id="disciplinas" class="dropdown">
+                                <option value="">Todas as Disciplinas</option>
+                                <option value="Geografia">Geografia</option>
+                                <option value="Matemática">Matemática</option>
+                                <option value="Física">Física</option>
+                                <option value="História">História</option>
+                            </select>
+                        </div>
+                        <div class="dropdowns">
+                            <select id="bimestre" class="dropdown">
+                                <option value="">Todos os Bimestres</option>
+                                <option value="1">1º Bimestre</option>
+                                <option value="2">2º Bimestre</option>
+                                <option value="3">3º Bimestre</option>
+                                <option value="4">4º Bimestre</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div>
+                        <button id="newRegister" onclick="openNew()">Novo</button>
+                    </div>
+                </section>
+
+                <section class="planilha">
+                    <input type="search" placeholder="Procurar pelo nome">
+
+                    <table border="1">
+                        <thead>
+                            <th>Conteúdo</th>
+                            <th>Período</th>
+                            <th>Disciplina</th>
+                            <th>Descrição</th>
+                            <th class="acao">Editar</th>
+                            <th class="acao">Excluir</th>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Geopolítica: Conceitos</td>
+                                <td>1ºBIM</td>
+                                <td>Geografia</td>
+                                <td>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit voluptate autem ex impedit architecto ratione repudiandae, perferendis nam cupiditate corrupti magnam, labore numquam fugit repellat incidunt magni ad odit commodi?</td>
+                            </tr>
+                            <tr>
+                                <td>Tipos de Solo</td>
+                                <td>1ºBIM</td>
+                                <td>Geografia</td>
+                                <td>Lorem ipsum dolor sit amet consectetur adipisicing eli. Facere cupiditate expedita hic aut sit architecto dicta nam recusandae cumque fuga modi, fugit enim a ad eius quo doloremque provident nesciunt!</td>
+                            </tr>
+                            <tr>
+                                <td>Blocos Econômicos</td>
+                                <td>1ºBIM</td>
+                                <td>Geografia</td>
+                                <td>Lorem ipsum dolor sit amet, consectetur adipisicng elit. Est autem sint error? Animi aspernatur, nulla laboriosam mollitia aliquid veritatis beatae tempora ut cum veniam enim minus. Minima illum aliquam iste!</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </section>
+            </section>
+
+            <section class="novo" id="new">
+                <div class="modalnew-container">
+                    <div class="modalnew">
+                      <form>
+                        <label for="n-conteudo">Conteúdo</label>
+                        <input id="n-conteudo" type="text" required />
+                
+                        <label for="n-bim">Bimestre</label>
+                        <input id="n-bim" type="number" required />
+                
+                        <label for="n-disciplina">Disciplina</label>
+                        <input id="n-disciplina" type="text" required />
+
+                        <label for="n-descrip">Descrição</label>
+                        <input id="n-descrip" type="text" required>
+                        <button id="btnSalvar">Salvar</button>
+                      </form>
+                    </div>
+                  </div>
+            </section>
+            <hr id="limit">
+        </main>
+    </div>
+    <section id="popup" class="popup">
+        <div class="modal-help">
+            <h2>Precisa de Ajuda?</h2>
+            <hr>
+            <div class="modal-help-content">   
+                <p>Bem vindo(a) a página de programação de conteúdos! Por aqui você registra todas as informações das suas aulas
+                    antes de aplicá-las, justamente para facilitar a sua dinâmica e organização na sua sala de aula tendo tudo pré-programado!
+                </p>
+                <hr>
+                <p>
+                    Para começar, selecione uma disciplina nas pastas localizadas abaixo:
+                </p>
+                <img src="help-pastasprog.png" alt="pastasprog">
+                <hr>
+                <p>Assim que uma disciplina for selecionada, a planilha de conteúdos será aberta.</p>
+                <img src="help-disciplinaviewprog.png" alt="planilha">
+                <p>Para prosseguir, você pode buscar um conteúdo pela barra de pesquisa, filtrar os conteúdos pelos filtros acima, ou adicionar um registro novo no botão "NOVO":</p>
+                <hr>
+                <p>Para adicionar um novo conteúdo, clicando no botão "NOVO", prossiga o registro através da janela e clique em salvar, preenchendo TODOS os campos. Em seguida, clique em salvar.</p>
+                <img src="help-novoconteudoprog.png" alt="novoconteudo">
+                <hr>
+                <p>Para editar ou excluir clique nos botões a direita na planilha.</p>
+                <img src="help-editexcluprog.png" alt="">
+                <hr>
+                <p>Ainda com dúvidas? Contate o suporte técnico com o botão a seguir:<button id="suporte"><img src="suporte.png" alt="-"></button>
+                </p>
+            </div>
+            <button id="ok-help" onclick="handlePopup(false)" type="submit">OK</button>
+        </div>
+    </section>
+    <script src="prog_cont.js"></script>
+
+    <footer> 
+        <img src="tformbranco-logovetor.svg" alt=""> &copy; 2024 TRANSFORMA | Todos os direitos reservados 
+    </footer>
+
+</body>
+</html>

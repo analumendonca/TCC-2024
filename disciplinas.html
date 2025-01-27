@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="PT-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PROF</title>
+    <link rel="stylesheet" href="disciplinas.css">
+    
+</head>
+<body>
+    <header>
+        <div class="header-left">
+            <img class="logo-icon" alt="Logo" src="logoprof.svg">
+            <nav>
+                <ul class="header-left-ul">
+                    <a href="dashborad.html">Dashboard</a>
+                    <a id="pageatual" href="disciplinas.html"> > Disciplinas</a>
+                </ul>
+            </nav>
+        </div>
+        <nav>
+            <ul class="header-ul">
+                <button id="themeToggle">
+                    <img id="themeIcon" src="sol.svg" alt="Sun Icon">
+                </button>
+                <button class="notification-button">
+                    <img class="iconoirbell-notification" alt="Notificações" src="icon-noti.svg">
+                </button>
+
+                <button class="configuração-button">
+                    <img class="summer-icon" alt="Ícone de verão" src="summer.svg">
+                </button>
+            </ul>
+        </nav>
+    </header>
+    <div class="body">
+        <nav id="sidebar">
+            <div id="sidebar_content">
+                <div id="user">
+                    <img src="image.png" id="user_avatar" alt="Avatar">
+        
+                    <p id="user_infos">
+                        <span class="item-description">
+                            Fulano de Tal
+                        </span>
+                        <span class="item-description">
+                            Lorem Ipsum
+                        </span>
+                    </p>
+                </div>
+        
+                <ul id="side_items">
+                    <li class="side-item">
+                        <a href="dashborad.html">
+                            <i><img src="dashhome.svg" alt=""></i>
+                            <span class="item-description">
+                                Dashboard
+                            </span>
+                        </a>
+                    </li>
+        
+                    <li class="side-item active">
+                        <a href="disciplinas.html">
+                            <i><img src="discbook.svg" alt=""></i>
+                            <span class="item-description">
+                                Disciplinas
+                            </span>
+                        </a>
+                    </li>
+        
+                    <li class="side-item">
+                        <a href="registro_de_presencas.html">
+                            <i><img src="prescheck.svg" alt=""></i>
+                            <span class="item-description">
+                                Registro de Presenças
+                            </span>
+                        </a>
+                    </li>
+        
+                    <li class="side-item">
+                        <a href="lancamento_notas.html">
+                            <i><img src="notasdoc.svg" alt=""></i>
+                            <span class="item-description">
+                                Lançamento de Notas
+                            </span>
+                        </a>
+                    </li>
+        
+                    <li class="side-item">
+                        <a href="prog_cont.html">
+                            <i><img src="progpen.svg" alt=""></i>
+                            <span class="item-description">
+                                Programação de Conteúdos
+                            </span>
+                        </a>
+                    </li>
+
+                    <li class="side-item">
+                        <a href="diarioprof.html">
+                            <i><img src="diarioavatar.svg" alt=""></i>
+                            <span class="item-description">
+                                Diário do Professor
+                            </span>
+                        </a>
+                    </li>
+                    <li class="side-item">
+                        <a href="alunos.html">
+                            <i><img src="crianalunos.svg" alt=""></i>
+                            <span class="item-description">
+                                Alunos
+                            </span>
+                        </a>
+                    </li>
+                    <li class="side-item">
+                        <a href="relatorios.html">
+                            <i><img src="relabox.svg" alt=""></i>
+                            <span class="item-description">
+                                Relatórios
+                            </span>
+                        </a>
+                    </li>
+                </ul>
+        
+                <button id="open_btn">
+                    <i id="open_btn_icon">></i>
+                </button>
+            </div>
+        </nav>
+        <main>
+            <div class="titulo">
+                <h2>Disciplinas</h2> 
+                <button id="help" type="submit" onclick="handlePopup(true)">?</button>
+            </div>
+            <section class="welcome-section">
+                <div class="welcome-container">
+                    <div class="welcome-container-1">
+                        <h3>Disciplinas</h3>
+                        <p>Confira todas as funções para ajudar a administrar cada disciplina.</p>
+                    </div>
+                    <div class="welcome-container-2">
+                        <img id="professora" src="moca.png" alt="">
+                    </div>
+                </div>
+            </section>
+            <section class="wrapper-disc">
+                <i id="left2" ><</i>
+                <div class="carousel-disc">
+                    <button class="btn" onclick="handleFuncoes1()">
+                        <img class="vector" alt="Pasta Roxa" src="pastaroxa.png">
+                        <figcaption>Geografia</figcaption>
+                    </button>
+                    <button class="btn" onclick="handleFuncoes2()">
+                        <img class="vector" alt="Pasta azul" src="pastaazul.png">
+                        <figcaption>Matemática</figcaption>
+                    </button>    
+                    <button class="btn" onclick="handleFuncoes3()">
+                        <img class="vector" alt="Pasta amarela" src="pastaamarela.png">
+                        <figcaption>História</figcaption>
+                    </button>    
+                    <button class="btn" onclick="handleFuncoes4()">
+                        <img class="vector" alt="Pasta verde" src="pastaverde.png">
+                        <figcaption>Física</figcaption>
+                    </button>
+                </div>
+                <i id="right2" >></i>
+            </section>
+
+            <section class="funcoes" id="funcoesgeo">
+                <div class="funcoes-container">
+                    <div class="funcoes-select"> 
+                        <h2>Administrar</h2>
+                        <h3>Geografia</h3>
+                        <div class="funcoes-select-row1">
+                            <a href="lancamento_notas.html" class="adm-button" aria-label="Lançamento de Notas">
+                                <i><img src="notasdoc.svg" alt=""></i>
+                                <div class="botao-texto1">Lançamento de Notas</div>
+                            </a>
+                
+                            <a href="prog_cont.html" class="adm-button" aria-label="Programar Conteúdos">
+                                <i><img src="progpen.svg" alt=""></i>
+                                <div class="botao-texto1">Programar Conteúdos</div>
+                            </a>
+                        </div>
+                        <div class="funcoes-select-row2">
+                            <a href="diarioprof.html" class="adm-button" aria-label="Diário do Professor">
+                                <i><img src="diarioavatar.svg" alt=""></i>
+                                <div class="botao-texto1">Diário do Professor</div>
+                            </a>
+                            <a href="relatorios.html" class="adm-button" aria-label="Relatórios">
+                                <i><img src="relabox.svg" alt=""></i>
+                                <div class="botao-texto1">Relatórios</div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="funcoes" id="funcoesmat">
+                <div class="funcoes-container">
+                    <div class="funcoes-select"> 
+                        <h2>Administrar</h2>
+                        <h3>Matemática</h3>
+                        <div class="funcoes-select-row1">
+                            <a href="lancamento_notas.html" class="adm-button" aria-label="Lançamento de Notas">
+                                <i><img src="notasdoc.svg" alt=""></i>
+                                <div class="botao-texto1">Lançamento de Notas</div>
+                            </a>
+                
+                            <a href="prog_cont.html" class="adm-button" aria-label="Programar Conteúdos">
+                                <i><img src="progpen.svg" alt=""></i>
+                                <div class="botao-texto1">Programar Conteúdos</div>
+                            </a>
+                        </div>
+                        <div class="funcoes-select-row2">
+                            <a href="diarioprof.html" class="adm-button" aria-label="Diário do Professor">
+                                <i><img src="diarioavatar.svg" alt=""></i>
+                                <div class="botao-texto1">Diário do Professor</div>
+                            </a>
+                            <a href="relatorios.html" class="adm-button" aria-label="Relatórios">
+                                <i><img src="relabox.svg" alt=""></i>
+                                <div class="botao-texto1">Relatórios</div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="funcoes" id="funcoeshist">
+                <div class="funcoes-container">
+                    <div class="funcoes-select"> 
+                        <h2>Administrar</h2>
+                        <h3>História</h3>
+                        <div class="funcoes-select-row1">
+                            <a href="lancamento_notas.html" class="adm-button" aria-label="Lançamento de Notas">
+                                <i><img src="notasdoc.svg" alt=""></i>
+                                <div class="botao-texto1">Lançamento de Notas</div>
+                            </a>
+                
+                            <a href="prog_cont.html" class="adm-button" aria-label="Programar Conteúdos">
+                                <i><img src="progpen.svg" alt=""></i>
+                                <div class="botao-texto1">Programar Conteúdos</div>
+                            </a>
+                        </div>
+                        <div class="funcoes-select-row2">
+                            <a href="diarioprof.html" class="adm-button" aria-label="Diário do Professor">
+                                <i><img src="diarioavatar.svg" alt=""></i>
+                                <div class="botao-texto1">Diário do Professor</div>
+                            </a>
+                            <a href="relatorios.html" class="adm-button" aria-label="Relatórios">
+                                <i><img src="relabox.svg" alt=""></i>
+                                <div class="botao-texto1">Relatórios</div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="funcoes" id="funcoesfis">
+                <div class="funcoes-container">
+                    <div class="funcoes-select"> 
+                        <h2>Administrar</h2>
+                        <h3>Física</h3>
+                        <div class="funcoes-select-row1">
+                            <a href="lancamento_notas.html" class="adm-button" aria-label="Lançamento de Notas">
+                                <i><img src="notasdoc.svg" alt=""></i>
+                                <div class="botao-texto1">Lançamento de Notas</div>
+                            </a>
+                
+                            <a href="prog_cont.html" class="adm-button" aria-label="Programar Conteúdos">
+                                <i><img src="progpen.svg" alt=""></i>
+                                <div class="botao-texto1">Programar Conteúdos</div>
+                            </a>
+                        </div>
+                        <div class="funcoes-select-row2">
+                            <a href="diarioprof.html" class="adm-button" aria-label="Diário do Professor">
+                                <i><img src="diarioavatar.svg" alt=""></i>
+                                <div class="botao-texto1">Diário do Professor</div>
+                            </a>
+                            <a href="relatorios.html" class="adm-button" aria-label="Relatórios">
+                                <i><img src="relabox.svg" alt=""></i>
+                                <div class="botao-texto1">Relatórios</div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <hr id="limit">
+        </main>
+    </div>
+
+    <!--POPUP DE AJUDA-->
+    <section id="popup" class="popup">
+        <div class="modal-help">
+            <h2>Precisa de Ajuda?</h2>
+            <hr>
+            <div class="modal-help-content">
+                <p>Bem vindo(a) a página de disciplinas. Aqui você pode ter o acesso das funções e ferramentas para administrar suas disciplinas</p>
+                <p>Basicamente, essa página funciona como um menu principal.</p>
+                <hr>
+                <p>Para começar, basta selecionar a disciplina desejada para abrir suas ferramentas.</p>
+                <hr>
+                <p>Ainda com dúvidas? Contate o suporte técnico com o botão a seguir:<button id="suporte"><img src="suporte.png" alt="-"></button>
+                </p>
+            </div>
+            <button id="ok-help" onclick="handlePopup(false)" type="submit">OK</button>
+        </div>
+    </section>
+
+<script src="disciplinas.js"></script>
+<footer> 
+    <img src="tformbranco-logovetor.svg" alt=""> &copy; 2024 TRANSFORMA | Todos os direitos reservados 
+</footer>
+</body>
+</html>

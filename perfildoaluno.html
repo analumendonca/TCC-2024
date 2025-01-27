@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="perfildoaluno.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>PROF</title>
+</head>
+
+<body>
+    <header>
+        <img class="logo-icon" alt="Logo" src="logoprof.svg">
+        <nav>
+            <ul class="header-ul">
+                <button id="themeToggle">
+                    <img id="themeIcon" src="sol.svg" alt="Sun Icon">
+                </button>
+                <button class="notification-button">
+                    <img class="iconoirbell-notification" alt="Notificações" src="icon-noti.svg">
+                </button>
+
+                <button class="configuração-button">
+                    <img class="summer-icon" alt="Ícone de verão" src="summer.svg">
+                </button>
+            </ul>
+        </nav>
+    </header>
+    <div class="body">
+        <nav id="sidebar">
+            <div id="sidebar_content">
+                <div id="user">
+                    <img src="image.png" id="user_avatar" alt="Avatar">
+        
+                    <p id="user_infos">
+                        <span class="item-description">
+                            Fulano de Tal
+                        </span>
+                        <span class="item-description">
+                            Lorem Ipsum
+                        </span>
+                    </p>
+                </div>
+        
+                <ul id="side_items">
+                    <li class="side-item">
+                        <a href="dashborad.html">
+                            <i><img src="dashhome.svg" alt=""></i>
+                            <span class="item-description">
+                                Dashboard
+                            </span>
+                        </a>
+                    </li>
+        
+                    <li class="side-item">
+                        <a href="disciplinas.html">
+                            <i><img src="discbook.svg" alt=""></i>
+                            <span class="item-description">
+                                Disciplinas
+                            </span>
+                        </a>
+                    </li>
+        
+                    <li class="side-item">
+                        <a href="registro_de_presencas.html">
+                            <i><img src="prescheck.svg" alt=""></i>
+                            <span class="item-description">
+                                Registro de Presenças
+                            </span>
+                        </a>
+                    </li>
+        
+                    <li class="side-item">
+                        <a href="lancamento_notas.html">
+                            <i><img src="notasdoc.svg" alt=""></i>
+                            <span class="item-description">
+                                Lançamento de Notas
+                            </span>
+                        </a>
+                    </li>
+        
+                    <li class="side-item">
+                        <a href="prog_cont.html">
+                            <i><img src="progpen.svg" alt=""></i>
+                            <span class="item-description">
+                                Programação de Conteúdos
+                            </span>
+                        </a>
+                    </li>
+
+                    <li class="side-item">
+                        <a href="diarioprof.html">
+                            <i><img src="diarioavatar.svg" alt=""></i>
+                            <span class="item-description">
+                                Diário do Professor
+                            </span>
+                        </a>
+                    </li>
+                    <li class="side-item">
+                        <a href="alunos.html">
+                            <i><img src="crianalunos.svg" alt=""></i>
+                            <span class="item-description">
+                                Alunos
+                            </span>
+                        </a>
+                    </li>
+                    <li class="side-item">
+                        <a href="relatorios.html">
+                            <i><img src="relabox.svg" alt=""></i>
+                            <span class="item-description">
+                                Relatórios
+                            </span>
+                        </a>
+                    </li>
+                </ul>
+        
+                <button id="open_btn">
+                    <i id="open_btn_icon">></i>
+                </button>
+            </div>
+        </nav>
+        <main>
+            <h2>Perfil do Aluno</h2>
+            <div class="perfil-container">
+                <div class="perfil">
+                    <img class="foto" src="perfil.png" alt="Sua foto">
+                    <div class="discript">
+                        <h5>Ana Julia Mendonça</h5>
+                        <h6>Contato dos Responsáveis</h6>
+                    </div>
+                </div>
+
+                <div class="obs">
+                    <h4>Observações:  </h4>
+                    <div class="message-board">
+                        <div class="message">
+                            <strong>Mensagem:</strong>
+                            <div>Prof Fernanda: Atrapalhou a aula do dia 15/02/2024 ...</div>
+                        </div>
+                    </div>
+                    <button class="add-message-button">Adicionar Nova Mensagem</button>
+                </div>
+            </div>
+            <section class="boletin-sect">
+                <div class="boletim">
+                    <div class="buttons">
+                        <input type="text" placeholder="Procurar por Disciplinas" class="search">
+
+                    </div>
+                    <table class="grades-table">
+                        <thead>
+                            <tr>
+                                <th>Faltas</th>
+                                <th>Matéria</th>
+                                <th>Mensal</th>
+                                <th>Simulado</th>
+                                <th>Bimestral</th>
+                                <th>REC.</th>
+                                <th>Média</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>2</td>
+                                <td>Matemática</td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                                <td>Português</td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>5</td>
+                                <td>História</td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>4</td>
+                                <td>Geografia</td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>Física</td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>1</td>
+                                <td>Química</td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                                <td>Biologia</td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+        </main>
+    </div>
+    <script src="perfildoaluno.js"></script>
+
+    <footer> 
+        &copy; 2024 TRANSFORMA | Todos os direitos reservados
+    </footer>
+
+</body>

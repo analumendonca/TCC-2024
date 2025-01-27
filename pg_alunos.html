@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PROF</title>
+    <link rel="stylesheet" href="pg_alunos.css">
+</head>
+<body>
+    <header class="header">
+        <div class="logomenu"><!--logo e menu-->
+            <img src="logo.svg" alt="menu/dashboard">
+        </div>
+        <div class="pages"><!--paginas-->
+            <a href="">Dashboard</a>
+            <a href="">> Alunos</a>
+            <a href="">> Alunos 3I</a>
+        </div>
+    </header>
+    <nav><!--acesso rapido-->
+        <header class="acesso">
+            Acesso Rápido <button class="fecha"><img src="icon-double-chevron.svg" alt=""></button>
+        </header>
+        <div class="acesso-1">
+            <a href=""><img src="" alt="">Dashboard</a>
+            <a href=""><img src="" alt="">Disciplinas</a>
+            <a href=""><img src="" alt="">Registro de Presenças</a>
+            <a href=""><img src="" alt="">Turmas</a>
+            <a href=""><img src="" alt="">Lançamento de Notas</a>
+            <a href=""><img src="" alt="">Programação de Aulas</a>
+            <a href=""><img src="" alt="">Diário do Professor</a>
+            <a href=""><img src="" alt="">Alunos</a>
+            <a href=""><img src="" alt="">Relatórios</a>
+        </div>
+        <div class="acesso-2">
+            <a href=""><img src="" alt="">Fórum</a>
+            <a href=""><img src="" alt="">Notificações</a>
+        </div>
+        <div class="acesso-perfil"><!--perfil acesso-->
+            <img src="" alt="">
+            <p>Prof. Fulano de Tal</p>
+            <p>proffulanodetal@email.com</p>
+        </div>
+    </nav>
+    <section>
+        <div>  </div> <!--linha-->
+        <h1>Alunos</h1>
+        <section><!--retangulo-->
+            <div id='busca'>
+                <form action="/search" class="search" method="get">
+                    <input id="txtbusca" name="q" type="text" value="" placeholder="Digite o que você procura" />
+                    <input id="btnBusca" type="submit" value="Ok"/>
+                </form>
+                </div>
+            <table>
+                <thead>
+                    <tr>
+                      <th scope="col">Foto</th>
+                      <th scope="col">Nome</th>
+                      <th scope="col">Turma</th>
+                      <th scope="col">Email</th>
+                      <th scope="col">Desempenho</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <th scope="row"><img src="" alt="Foto"></th>
+                      <td>Aluno 1</td>
+                      <td>3I</td>
+                      <td>aluno1@email.com</td>
+                      <td><button>Acessar</button></td>
+                    </tr>
+                    <tr>
+                        <th scope="row"><img src="" alt="Foto"></th>
+                        <td>Aluno 2</td>
+                        <td>3I</td>
+                        <td>aluno2@email.com</td>
+                        <td><button>Acessar</button></td>
+                      </tr>
+                      <tr>
+                        <th scope="row"><img src="" alt="Foto"></th>
+                        <td>Aluno 3</td>
+                        <td>3I</td>
+                        <td>aluno3@email.com</td>
+                        <td><button>Acessar</button></td>
+                      </tr>
+                      <tr>
+                        <th scope="row"><img src="" alt="Foto"></th>
+                        <td>Aluno 4</td>
+                        <td>3I</td>
+                        <td>aluno4@email.com</td>
+                        <td><button>Acessar</button></td>
+                      </tr>
+                      <tr>
+                        <th scope="row"><img src="" alt="Foto"></th>
+                        <td>Aluno 5</td>
+                        <td>3I</td>
+                        <td>aluno5@email.com</td>
+                        <td><button>Acessar</button></td>
+                      </tr>
+                  </tbody>
+            </table>
+        </section>
+    </section>
+    
+</body>
+</html>

@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="PT-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PROF</title>
+    <link rel="stylesheet" href="registro_de_presencas.css">
+</head>
+<body>
+    <header>
+        <div class="header-left"> 
+            <img class="logo-icon" alt="Logo" src="logoprof.svg">
+            <nav>
+                <ul class="header-left-ul">
+                    <a href="dashborad.html">Dashboard</a>
+                    <a id="pageatual" href="registro_de_presencas.html"> > Registros de Presenças</a>
+                </ul>
+            </nav>
+        </div>
+        <nav>
+            <ul class="header-ul">
+                <button id="themeToggle">
+                    <img id="themeIcon" src="sol.svg" alt="Sun Icon">
+                </button>
+                <button class="notification-button">
+                    <img class="iconoirbell-notification" alt="Notificações" src="icon-noti.svg">
+                </button>
+
+                <button class="configuração-button">
+                    <img class="summer-icon" alt="Ícone de verão" src="summer.svg">
+                </button>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="body">
+        <nav id="sidebar">
+            <div id="sidebar_content">
+                <div id="user">
+                    <img src="image.png" id="user_avatar" alt="Avatar">
+        
+                    <p id="user_infos">
+                        <span class="item-description">
+                            Fulano de Tal
+                        </span>
+                        <span class="item-description">
+                            Lorem Ipsum
+                        </span>
+                    </p>
+                </div>
+        
+                <ul id="side_items">
+                    <li class="side-item">
+                        <a href="dashborad.html">
+                            <i><img src="dashhome.svg" alt=""></i>
+                            <span class="item-description">
+                                Dashboard
+                            </span>
+                        </a>
+                    </li>
+        
+                    <li class="side-item">
+                        <a href="disciplinas.html">
+                            <i><img src="discbook.svg" alt=""></i>
+                            <span class="item-description">
+                                Disciplinas
+                            </span>
+                        </a>
+                    </li>
+        
+                    <li class="side-item active">
+                        <a href="registro_de_presencas.html">
+                            <i><img src="prescheck.svg" alt=""></i>
+                            <span class="item-description">
+                                Registro de Presenças
+                            </span>
+                        </a>
+                    </li>
+        
+                    <li class="side-item">
+                        <a href="lancamento_notas.html">
+                            <i><img src="notasdoc.svg" alt=""></i>
+                            <span class="item-description">
+                                Lançamento de Notas
+                            </span>
+                        </a>
+                    </li>
+        
+                    <li class="side-item">
+                        <a href="prog_cont.html">
+                            <i><img src="progpen.svg" alt=""></i>
+                            <span class="item-description">
+                                Programação de Conteúdos
+                            </span>
+                        </a>
+                    </li>
+
+                    <li class="side-item">
+                        <a href="diarioprof.html">
+                            <i><img src="diarioavatar.svg" alt=""></i>
+                            <span class="item-description">
+                                Diário do Professor
+                            </span>
+                        </a>
+                    </li>
+                    <li class="side-item">
+                        <a href="alunos.html">
+                            <i><img src="crianalunos.svg" alt=""></i>
+                            <span class="item-description">
+                                Alunos
+                            </span>
+                        </a>
+                    </li>
+                    <li class="side-item">
+                        <a href="relatorios.html">
+                            <i><img src="relabox.svg" alt=""></i>
+                            <span class="item-description">
+                                Relatórios
+                            </span>
+                        </a>
+                    </li>
+                </ul>
+        
+                <button id="open_btn">
+                    <i id="open_btn_icon">></i>
+                </button>
+            </div>
+        </nav>
+        <main>
+            <div class="titulo">
+                <h2>Registro de Presença</h2> 
+                <button id="help" type="submit" onclick="handlePopup(true)">?</button>
+            </div>
+            <section class="welcome-section">
+                <div class="welcome-container">
+                    <div class="welcome-container-1">
+                        <h3>Registro de Presenças</h3>
+                        <p>Registre a presença dos alunos nas suas aulas por aqui. </p>
+                    </div>
+                    <div class="welcome-container-2">
+                        <img id="professora" src="moca.png" alt="">
+                    </div>
+                </div>
+            </section>
+
+            <section class="filtros">
+                <section class="primary">
+                    <h4>Selecione a data:
+                        <input type="date" id="dias" class="dropdown" onchange="updateTableDate()">
+                    </h4>
+                    <h4>Selecione a turma:
+                        <div class="dropdowns">
+                            <select id="salas" class="dropdown">
+                                <option value="">Selecione a sala</option>
+                                <option value="3i">3I</option>
+                                <option value="3j">3J</option>
+                                <option value="3k">3K</option>
+                                <option value="2i">2I</option>
+                                <option value="2j">2J</option>
+                                <option value="2k">2K</option>
+                                <option value="1i">1I</option>
+                                <option value="1j">1J</option>
+                                <option value="1k">1K</option>
+                            </select>
+                        </div>
+                    </h4>
+                </section>
+            </section>
+            
+            <section class="containerbox" style="display: none;">
+                <div class="container">
+                    <div class="top-bar">
+                        <input type="text" class="barra-procurar" id="searchInput" placeholder="Procurar pelo Nome">
+                        <div class="btn-topbar">
+                            <button class="btn-relatorio">Gerar Relatório</button>
+                            <button class="btnedit">Editar</button>
+                        </div>
+                    </div>
+            
+                    <table id="studentTable">
+                        <thead>
+                            <tr>
+                                <th>Número</th>
+                                <th>Nome</th>
+                                <th>Turma</th>
+                                <th>Dia</th>
+                                <th>Falta</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td>Ana Julia Mendonça</td>
+                                <td>3I</td>
+                                <td class="date-cell"></td>
+                                <td><input type="checkbox" class="checkpres" onclick="toggleColor(this)"></td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>Ana Luisa Mendonça</td>
+                                <td>3I</td>
+                                <td class="date-cell"></td>
+                                <td><input type="checkbox" class="checkpres" onclick="toggleColor(this)"></td>
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                                <td>Anne Rogrigues</td>
+                                <td>3I</td>
+                                <td class="date-cell"></td>
+                                <td><input type="checkbox" class="checkpres" onclick="toggleColor(this)"></td>
+                            </tr>
+                            <tr>
+                                <td>4</td>
+                                <td>Beatriz Cavalcante</td>
+                                <td>3I</td>
+                                <td class="date-cell"></td>
+                                <td><input type="checkbox" class="checkpres" onclick="toggleColor(this)"></td>
+                            </tr>
+                            <tr>
+                                <td>5</td>
+                                <td>Giovana Castilho</td>
+                                <td>3I</td>
+                                <td class="date-cell"></td>
+                                <td><input type="checkbox" class="checkpres" onclick="toggleColor(this)"></td>
+                            </tr>
+                            <tr>
+                                <td>6</td>
+                                <td>Giovanna Marine</td>
+                                <td>3I</td>
+                                <td class="date-cell"></td>
+                                <td><input type="checkbox" class="checkpres" onclick="toggleColor(this)"></td>
+                            </tr>
+                            <tr>
+                                <td>7</td>
+                                <td>Gustavo Siqueira</td>
+                                <td>3I</td>
+                                <td class="date-cell"></td>
+                                <td><input type="checkbox" class="checkpres" onclick="toggleColor(this)"></td>
+                            </tr>
+                            <tr>
+                                <td>8</td>
+                                <td>Isabelly Amorim</td>
+                                <td>3I</td>
+                                <td class="date-cell"></td>
+                                <td><input type="checkbox" class="checkpres" onclick="toggleColor(this)"></td>
+                            </tr>
+                            <tr>
+                                <td>9</td>
+                                <td>Julia Façanha</td>
+                                <td>3I</td>
+                                <td class="date-cell"></td>
+                                <td><input type="checkbox" class="checkpres" onclick="toggleColor(this)"></td>
+                            </tr>
+                            <tr>
+                                <td>10</td>
+                                <td>Mariana Lohanne</td>
+                                <td>3I</td>
+                                <td class="date-cell"></td>
+                                <td><input type="checkbox" class="checkpres" onclick="toggleColor(this)"></td>
+                            </tr>
+                            <tr>
+                                <td>11</td>
+                                <td>Victhor Noé</td>
+                                <td>3I</td>
+                                <td class="date-cell"></td>
+                                <td><input type="checkbox" class="checkpres" onclick="toggleColor(this)"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+            
+                    <div class="bottom-bar">
+                        <button class="save-button">Salvar</button>
+                        <button class="send-button"><img src="whiteplane.png" alt="">Enviar para a Coordenação</button>
+                    </div>
+                </div>
+            </section>
+            
+        </main>
+    </div>
+
+
+    <section id="popup" class="popup">
+        <div class="modal-help">
+            <h2>Precisa de Ajuda?</h2>
+            <hr>
+            <div class="modal-help-content">
+                <p>Bem vindo(a) ao Registro de Presenças! Aqui você pode visualizar os alunos presentes no dia e editar os registros caso encontre algum engano durante a aula.</p>
+                <hr>
+                <p>Para iniciar, selecione o dia referente e a turma desejada no primeiro bloco:</p>
+                <img src="help-bloco1regist.png" alt="bloco1">
+                <hr>
+                <p>Assim a tabela será aberta e você poderá visualizar os alunos presentes do dia.</p>
+                <img src="help-tabelaregist.png" alt="tabela">
+                <hr>
+                <p>Se você detectar alguma falta errada, você pode editar sem problemas! É só clicar no botão editar:</p>
+                <img id="editimg" src="help-editregist.png" alt="">
+                <p>Depois clique na caixinha ao lado e pronto! Só apertar o botão de salvar.</p>
+                <div class="imgshelp">
+                    <img src="help-faltacheckregist.png" alt="">
+                    <img src="help-save.png" alt="">
+                </div>
+                <hr>
+                <p>Ainda com dúvidas? Contate o suporte técnico com o botão a seguir:<button id="suporte"><img src="suporte.png" alt="-"></button>
+                </p>
+            </div>
+            <button id="ok-help" onclick="handlePopup(false)" type="submit">OK</button>
+        </div>
+    </section>
+
+    <footer>
+    <img src="tformbranco-logovetor.svg" alt="">&copy; 2024 TRANSFORMA | Todos os direitos reservados
+    </footer>
+
+    <script src="registro_de_presencas.js"></script>
+</body>
+</html>

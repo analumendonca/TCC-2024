@@ -1,0 +1,63 @@
+/*importando fontes*/
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+/*css da pagina*/
+body {
+    background-color: #e0eefa;
+}
+.logomenu {
+    width: 152px;
+    height: 73px;
+}
+.pages{
+}
+.header{
+    display: flex;
+    padding: 1%;
+    align-items: center;
+    gap: 3%;
+    font-family: Poppins;
+    color: #494949;
+    font-size: 16px;
+}
+nav {
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    gap: 2%;
+    flex-direction: column;
+    width: 239px;
+    height: 1394px;
+    border-radius: 8px;
+    padding: 1%;
+    background-color: #E0EEFA;
+}
+.acesso{
+    color: #B9B9B9;
+    font-family: Poppins;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 20px; /* 125% */
+}
+.fecha{
+    border: 0;
+}
+.acesso-1{
+    display: flex;
+    flex-direction: column;
+    gap: 2%;
+    color: #898C81;
+    font-family: Poppins;
+    font-size: 14px;
+    margin-top: 1%;
+}
+.acesso-2{
+    display: flex;
+    flex-direction: column;
+    justify-self: end;
+    gap: 2%;
+    color: #898C81;
+    font-family: Poppins;
+    font-size: 14px;
+    margin-top: 1%;
+}

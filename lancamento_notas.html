@@ -1,0 +1,629 @@
+<!DOCTYPE html>
+<html lang="PT-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PROF</title>
+    <link rel="stylesheet" href="lancamento_notas.css">
+</head>
+<body>
+    <header>
+        <div class="header-left"> 
+            <img class="logo-icon" alt="Logo" src="logoprof.svg">
+            <nav>
+                <ul class="header-left-ul">
+                    <a href="dashborad.html">Dashboard</a>
+                    <a id="pageatual" href="lancamento_notas.html"> > Lançamento de Notas</a>
+                </ul>
+            </nav>
+        </div>
+        <nav>
+            <ul class="header-ul">
+                <button id="themeToggle">
+                    <img id="themeIcon" src="sol.svg" alt="Sun Icon">
+                </button>
+
+                <button class="notification-button">
+                    <img class="iconoirbell-notification" alt="Notificações" src="icon-noti.svg">
+                </button>
+
+                <button class="configuração-button">
+                    <img class="summer-icon" alt="Ícone de verão" src="summer.svg">
+                </button>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="body">
+        <nav id="sidebar">
+            <div id="sidebar_content">
+                <div id="user">
+                    <img src="image.png" id="user_avatar" alt="Avatar">
+        
+                    <p id="user_infos">
+                        <span class="item-description">
+                            Fulano de Tal
+                        </span>
+                        <span class="item-description">
+                            Lorem Ipsum
+                        </span>
+                    </p>
+                </div>
+        
+                <ul id="side_items">
+                    <li class="side-item">
+                        <a href="dashborad.html">
+                            <i><img src="dashhome.svg" alt=""></i>
+                            <span class="item-description">
+                                Dashboard
+                            </span>
+                        </a>
+                    </li>
+        
+                    <li class="side-item">
+                        <a href="disciplinas.html">
+                            <i><img src="discbook.svg" alt=""></i>
+                            <span class="item-description">
+                                Disciplinas
+                            </span>
+                        </a>
+                    </li>
+        
+                    <li class="side-item">
+                        <a href="registro_de_presencas.html">
+                            <i><img src="prescheck.svg" alt=""></i>
+                            <span class="item-description">
+                                Registro de Presenças
+                            </span>
+                        </a>
+                    </li>
+        
+                    <li class="side-item active">
+                        <a href="lancamento_notas.html">
+                            <i><img src="notasdoc.svg" alt=""></i>
+                            <span class="item-description">
+                                Lançamento de Notas
+                            </span>
+                        </a>
+                    </li>
+        
+                    <li class="side-item">
+                        <a href="prog_cont.html">
+                            <i><img src="progpen.svg" alt=""></i>
+                            <span class="item-description">
+                                Programação de Conteúdos
+                            </span>
+                        </a>
+                    </li>
+ 
+                    <li class="side-item">
+                        <a href="diarioprof.html">
+                            <i><img src="diarioavatar.svg" alt=""></i>
+                            <span class="item-description">
+                                Diário do Professor
+                            </span>
+                        </a>
+                    </li>
+                    <li class="side-item">
+                        <a href="alunos.html">
+                            <i><img src="crianalunos.svg" alt=""></i>
+                            <span class="item-description">
+                                Alunos
+                            </span>
+                        </a>
+                    </li>
+                    <li class="side-item">
+                        <a href="relatorios.html">
+                            <i><img src="relabox.svg" alt=""></i>
+                            <span class="item-description">
+                                Relatórios
+                            </span>
+                        </a>
+                    </li>
+                </ul>
+        
+                <button id="open_btn">
+                    <i id="open_btn_icon">></i>
+                </button>
+            </div>
+        </nav>
+        <main>
+            <div class="titulo">
+                <h2>Lançamento de Notas</h2> 
+                <button id="help" type="submit" onclick="handlePopup(true)">?</button>
+            </div>
+            <section class="welcome-section">
+                <div class="welcome-container">
+                    <div class="welcome-container-1">
+                        <h3>Lançamento de Notas</h3>
+                        <p>Personalize seus métodos de avaliação e calcule registre resultados aqui.</p>
+                    </div>
+                    <div class="welcome-container-2">
+                        <img id="professora" src="moca.png" alt="">
+                    </div>
+                </div>
+                <div class="acessoava">
+                    <button class="bnt-acessoava" id="openPopupAvalia"><img src="planing.png" alt="">Personalizar Avaliações</button>
+                    <button class="bnt-acessoava" id="openPopupPontuacao"><img src="planing.png" alt="">Pontuações</button>
+                </div>
+            </section>
+            <p id="p">Selecione a disciplina, turma e bimestre abaixo para exibir a tabela.</p>
+            <section class="filtros-select">
+                <label for="disciplina">Disciplina:</label>
+                <select id="disciplina" class="dropdown">
+                    <option value="">Selecione</option>
+                    <option value="mat">Matemática</option>
+                    <option value="geo">Geografia</option>
+                    <option value="fis">Física</option>
+                    <option value="hist">História</option>
+                </select>
+                
+                <label for="bimestre">Bimestre:</label>
+                <select id="bimestre" class="dropdown">
+                    <option value="">Selecione</option>
+                    <option value="1Bim">1º Bimestre</option>
+                    <option value="2Bim">2º Bimestre</option>
+                    <option value="3Bim">3º Bimestre</option>
+                    <option value="4Bim">4º Bimestre</option>
+                </select>
+                
+                <label for="turma">Turma:</label>
+                <select id="turma" class="dropdown">
+                    <option value="">Selecione</option>
+                    <option value="3i">3ºI</option>
+                    <option value="3j">3ºJ</option>
+                    <option value="3k">3ºK</option>
+                </select>
+            </section>
+
+            <h2 id="filtro-titulo">Selecione a disciplina, o bimestre e a turma</h2> <!--guia para o dev-->
+
+            <!--NOTA PARA O BACKEND E BANCO: AS LISTAS DE MEDIAS GERAIS DOS ALUNOS(CONTAINER PRINCIPAL) E A DE AVALIAÇÕES+PONTUAÇÕES
+            DEVEM SER DIFERENTES PARA FUNCIONAREM. OS REGISTROS EXITENTES NESTE E EM OUTROS HTMLS SERVEM COMO MODELOS PARA TESTES
+            E VISUALIZAÇÃO-->
+
+            <div class="container">
+                <div class="top-bar">
+                    <input type="text" class="barra-procurar" placeholder="Procurar pelo Número">
+                    <button class="botão_relatório">Adicionar Relação</button>
+                    <button class="botão_relatório" id="editar">Editar</button>
+                    <button class="botão_relatório" id="calcular_media">Calcular Média</button>
+                </div>
+                
+                <table id="notas">
+                    <thead>
+                        <tr>
+                            <th>Nº do Aluno</th>
+                            <th>Nome</th>
+                            <th>Nota Mensal</th>
+                            <th>Nota de Simulado</th>
+                            <th>Nota Bimestral</th>
+                            <th>Roteiro</th>
+                            <th>Média</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!--Alunos registrados de 1 bimestre e 2 matérias para testes DEV-->
+                        <tr data-disciplina="mat" data-bimestre="1Bim" data-turma="3i">
+                            <td>1</td>
+                            <td>Ana Julia Mendonça</td>
+                            <td><input type="number" class="editable" value="0.0" max="10" /></td>
+                            <td><input type="number" class="editable" value="0.0" max="10" /></td>
+                            <td><input type="number" class="editable" value="0.0" max="10" /></td>
+                            <td><input type="number" class="editable" value="0.0" max="4" /></td>
+                            <td><input type="number" class="editable" value="0.0" readonly /></td>
+                        </tr>
+                        <tr data-disciplina="mat" data-bimestre="1Bim" data-turma="3i">
+                            <td>2</td>
+                            <td>Ana Luisa Mendonça</td>
+                            <td><input type="number" class="editable" value="0.0" max="10" /></td>
+                            <td><input type="number" class="editable" value="0.0" max="10" /></td>
+                            <td><input type="number" class="editable" value="0.0" max="10" /></td>
+                            <td><input type="number" class="editable" value="0.0" max="4" /></td>
+                            <td><input type="number" class="editable" value="0.0" readonly /></td>
+                        </tr>
+                        <tr data-disciplina="mat" data-bimestre="1Bim" data-turma="3i">
+                            <td>3</td>
+                            <td>Anne Rodrigues</td>
+                            <td><input type="number" class="editable" value="0.0" max="10" /></td>
+                            <td><input type="number" class="editable" value="0.0" max="10" /></td>
+                            <td><input type="number" class="editable" value="0.0" max="10" /></td>
+                            <td><input type="number" class="editable" value="0.0" max="4" /></td>
+                            <td><input type="number" class="editable" value="0.0" readonly /></td>
+                        </tr>
+                        <tr data-disciplina="mat" data-bimestre="1Bim" data-turma="3i">
+                            <td>4</td>
+                            <td>Beatriz Cavalcante</td>
+                            <td><input type="number" class="editable" value="0.0" max="10" /></td>
+                            <td><input type="number" class="editable" value="0.0" max="10" /></td>
+                            <td><input type="number" class="editable" value="0.0" max="10" /></td>
+                            <td><input type="number" class="editable" value="0.0" max="4" /></td>
+                            <td><input type="number" class="editable" value="0.0" readonly /></td>
+                        </tr>
+                        <tr data-disciplina="mat" data-bimestre="1Bim" data-turma="3i">
+                            <td>5</td>
+                            <td>Giovana Castilho</td>
+                            <td><input type="number" class="editable" value="0.0" max="10" /></td>
+                            <td><input type="number" class="editable" value="0.0" max="10" /></td>
+                            <td><input type="number" class="editable" value="0.0" max="10" /></td>
+                            <td><input type="number" class="editable" value="0.0" max="4" /></td>
+                            <td><input type="number" class="editable" value="0.0" readonly /></td>
+                        </tr>
+                        <tr data-disciplina="mat" data-bimestre="1Bim" data-turma="3i">
+                            <td>6</td>
+                            <td>Giovanna Marine</td>
+                            <td><input type="number" class="editable" value="0.0" max="10" /></td>
+                            <td><input type="number" class="editable" value="0.0" max="10" /></td>
+                            <td><input type="number" class="editable" value="0.0" max="10" /></td>
+                            <td><input type="number" class="editable" value="0.0" max="4" /></td>
+                            <td><input type="number" class="editable" value="0.0" readonly /></td>
+                        </tr>
+                        <tr data-disciplina="mat" data-bimestre="1Bim" data-turma="3i">
+                            <td>7</td>
+                            <td>Gustavo Siqueira</td>
+                            <td><input type="number" class="editable" value="0.0" max="10" /></td>
+                            <td><input type="number" class="editable" value="0.0" max="10" /></td>
+                            <td><input type="number" class="editable" value="0.0" max="10" /></td>
+                            <td><input type="number" class="editable" value="0.0" max="4" /></td>
+                            <td><input type="number" class="editable" value="0.0" readonly /></td>
+                        </tr>
+                        <tr data-disciplina="mat" data-bimestre="1Bim" data-turma="3i">
+                            <td>8</td>
+                            <td>Isabelly Amorim</td>
+                            <td><input type="number" class="editable" value="0.0" max="10" /></td>
+                            <td><input type="number" class="editable" value="0.0" max="10" /></td>
+                            <td><input type="number" class="editable" value="0.0" max="10" /></td>
+                            <td><input type="number" class="editable" value="0.0" max="4" /></td>
+                            <td><input type="number" class="editable" value="0.0" readonly /></td>
+                        </tr>
+                        <tr data-disciplina="mat" data-bimestre="1Bim" data-turma="3i">
+                            <td>9</td>
+                            <td>Julia Façanha</td>
+                            <td><input type="number" class="editable" value="0.0" max="10" /></td>
+                            <td><input type="number" class="editable" value="0.0" max="10" /></td>
+                            <td><input type="number" class="editable" value="0.0" max="10" /></td>
+                            <td><input type="number" class="editable" value="0.0" max="4" /></td>
+                            <td><input type="number" class="editable" value="0.0" readonly /></td>
+                        </tr>
+                        <tr data-disciplina="mat" data-bimestre="1Bim" data-turma="3i">
+                            <td>10</td>
+                            <td>Mariana Lohanne</td>
+                            <td><input type="number" class="editable" value="0.0" max="10" /></td>
+                            <td><input type="number" class="editable" value="0.0" max="10" /></td>
+                            <td><input type="number" class="editable" value="0.0" max="10" /></td>
+                            <td><input type="number" class="editable" value="0.0" max="4" /></td>
+                            <td><input type="number" class="editable" value="0.0" readonly /></td>
+                        </tr>
+                        <tr data-disciplina="mat" data-bimestre="1Bim" data-turma="3i">
+                            <td>11</td>
+                            <td>Victor Noé</td>
+                            <td><input type="number" class="editable" value="0.0" max="10" /></td>
+                            <td><input type="number" class="editable" value="0.0" max="10" /></td>
+                            <td><input type="number" class="editable" value="0.0" max="10" /></td>
+                            <td><input type="number" class="editable" value="0.0" max="4" /></td>
+                            <td><input type="number" class="editable" value="0.0" readonly /></td>
+                        </tr>
+
+                        
+                        <tr data-disciplina="geo" data-bimestre="1Bim" data-turma="3i">
+                            <td>1</td>
+                            <td>Ana Julia Mendonça</td>
+                            <td><input type="number" class="editable" value="0.0" max="10" /></td>
+                            <td><input type="number" class="editable" value="0.0" max="10" /></td>
+                            <td><input type="number" class="editable" value="0.0" max="10" /></td>
+                            <td><input type="number" class="editable" value="0.0" max="4" /></td>
+                            <td><input type="number" class="editable" value="0.0" readonly /></td>
+                        </tr>
+                        <tr data-disciplina="geo" data-bimestre="1Bim" data-turma="3i">
+                            <td>2</td>
+                            <td>Ana Luisa Mendonça</td>
+                            <td><input type="number" class="editable" value="0.0" max="10" /></td>
+                            <td><input type="number" class="editable" value="0.0" max="10" /></td>
+                            <td><input type="number" class="editable" value="0.0" max="10" /></td>
+                            <td><input type="number" class="editable" value="0.0" max="4" /></td>
+                            <td><input type="number" class="editable" value="0.0" readonly /></td>
+                        </tr>
+                        <tr data-disciplina="geo" data-bimestre="1Bim" data-turma="3i">
+                            <td>3</td>
+                            <td>Anne Rodrigues</td>
+                            <td><input type="number" class="editable" value="0.0" max="10" /></td>
+                            <td><input type="number" class="editable" value="0.0" max="10" /></td>
+                            <td><input type="number" class="editable" value="0.0" max="10" /></td>
+                            <td><input type="number" class="editable" value="0.0" max="4" /></td>
+                            <td><input type="number" class="editable" value="0.0" readonly /></td>
+                        </tr>
+                        <tr data-disciplina="geo" data-bimestre="1Bim" data-turma="3i">
+                            <td>4</td>
+                            <td>Beatriz Cavalcante</td>
+                            <td><input type="number" class="editable" value="0.0" max="10" /></td>
+                            <td><input type="number" class="editable" value="0.0" max="10" /></td>
+                            <td><input type="number" class="editable" value="0.0" max="10" /></td>
+                            <td><input type="number" class="editable" value="0.0" max="4" /></td>
+                            <td><input type="number" class="editable" value="0.0" readonly /></td>
+                        </tr>
+                        <tr data-disciplina="geo" data-bimestre="1Bim" data-turma="3i">
+                            <td>5</td>
+                            <td>Giovana Castilho</td>
+                            <td><input type="number" class="editable" value="0.0" max="10" /></td>
+                            <td><input type="number" class="editable" value="0.0" max="10" /></td>
+                            <td><input type="number" class="editable" value="0.0" max="10" /></td>
+                            <td><input type="number" class="editable" value="0.0" max="4" /></td>
+                            <td><input type="number" class="editable" value="0.0" readonly /></td>
+                        </tr>
+                        <tr data-disciplina="geo" data-bimestre="1Bim" data-turma="3i">
+                            <td>6</td>
+                            <td>Giovanna Marine</td>
+                            <td><input type="number" class="editable" value="0.0" max="10" /></td>
+                            <td><input type="number" class="editable" value="0.0" max="10" /></td>
+                            <td><input type="number" class="editable" value="0.0" max="10" /></td>
+                            <td><input type="number" class="editable" value="0.0" max="4" /></td>
+                            <td><input type="number" class="editable" value="0.0" readonly /></td>
+                        </tr>
+                        <tr data-disciplina="geo" data-bimestre="1Bim" data-turma="3i">
+                            <td>7</td>
+                            <td>Gustavo Siqueira</td>
+                            <td><input type="number" class="editable" value="0.0" max="10" /></td>
+                            <td><input type="number" class="editable" value="0.0" max="10" /></td>
+                            <td><input type="number" class="editable" value="0.0" max="10" /></td>
+                            <td><input type="number" class="editable" value="0.0" max="4" /></td>
+                            <td><input type="number" class="editable" value="0.0" readonly /></td>
+                        </tr>
+                        <tr data-disciplina="geo" data-bimestre="1Bim" data-turma="3i">
+                            <td>8</td>
+                            <td>Isabelly Amorim</td>
+                            <td><input type="number" class="editable" value="0.0" max="10" /></td>
+                            <td><input type="number" class="editable" value="0.0" max="10" /></td>
+                            <td><input type="number" class="editable" value="0.0" max="10" /></td>
+                            <td><input type="number" class="editable" value="0.0" max="4" /></td>
+                            <td><input type="number" class="editable" value="0.0" readonly /></td>
+                        </tr>
+                        <tr data-disciplina="geo" data-bimestre="1Bim" data-turma="3i">
+                            <td>9</td>
+                            <td>Julia Façanha</td>
+                            <td><input type="number" class="editable" value="0.0" max="10" /></td>
+                            <td><input type="number" class="editable" value="0.0" max="10" /></td>
+                            <td><input type="number" class="editable" value="0.0" max="10" /></td>
+                            <td><input type="number" class="editable" value="0.0" max="4" /></td>
+                            <td><input type="number" class="editable" value="0.0" readonly /></td>
+                        </tr>
+                        <tr data-disciplina="geo" data-bimestre="1Bim" data-turma="3i">
+                            <td>10</td>
+                            <td>Mariana Lohanne</td>
+                            <td><input type="number" class="editable" value="0.0" max="10" /></td>
+                            <td><input type="number" class="editable" value="0.0" max="10" /></td>
+                            <td><input type="number" class="editable" value="0.0" max="10" /></td>
+                            <td><input type="number" class="editable" value="0.0" max="4" /></td>
+                            <td><input type="number" class="editable" value="0.0" readonly /></td>
+                        </tr>
+                        <tr data-disciplina="geo" data-bimestre="1Bim" data-turma="3i">
+                            <td>11</td>
+                            <td>Victor Noé</td>
+                            <td><input type="number" class="editable" value="0.0" max="10" /></td>
+                            <td><input type="number" class="editable" value="0.0" max="10" /></td>
+                            <td><input type="number" class="editable" value="0.0" max="10" /></td>
+                            <td><input type="number" class="editable" value="0.0" max="4" /></td>
+                            <td><input type="number" class="editable" value="0.0" readonly /></td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div class="bottom-bar">
+                    <button class="save-button" id="salvar">Salvar</button>
+                    <button class="send-button">Enviar para a Coordenação</button>
+                </div>
+            </div>
+
+            <section class="avaliacoes">
+                <div id="popup-avaliacoes" class="popup-avaliacoes">
+                    <div class="popup-content-ava">
+                        <span class="close-ava" id="closePopup-ava">&times;</span>
+                        <h2>Personalizar Avaliações</h2>
+                        <p>Adicione suas atividades avaliativas e determine seus respectivos valores.</p>
+                        
+                        <div class="section-avalia">
+                            <h3>Avaliação Mensal</h3>
+                            <table class="activities" id="mensalTable">
+                                <thead>
+                                    <tr>
+                                        <th>Nome</th>
+                                        <th>Data de Aplicação/Período</th>
+                                        <th>Tipo</th>
+                                        <th>Valor</th>
+                                        <th>Disciplina</th>
+                                        <th>Bimestre</th>
+                                        <th>Turma</th>
+                                        <th>Editar</th>
+                                        <th>Excluir</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                </tbody>
+                            </table>
+                            <button onclick="addRow('mensalTable')">+ Adicionar Atividade</button>
+                        </div>
+                        <div class="section-avalia">
+                            <h3>Roteiro de Aprendizagem (REC.)</h3>
+                            <table class="activities" id="recTable">
+                                <thead>
+                                    <tr>
+                                        <th>Nome</th>
+                                        <th>Data de Aplicação/Período</th>
+                                        <th>Tipo</th>
+                                        <th>Valor</th>
+                                        <th>Disciplina</th>
+                                        <th>Bimestre</th>
+                                        <th>Turma</th>
+                                        <th>Editar</th>
+                                        <th>Excluir</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                </tbody>
+                            </table>
+                            <button onclick="addRow('recTable')">+ Adicionar Atividade</button>
+                        </div>
+
+                        <div class="section-avalia">
+                            <h3>Avaliação Bimestral</h3>
+                            <table class="activities" id="bimestralTable">
+                                <thead>
+                                    <tr>
+                                        <th>Nome</th>
+                                        <th>Data de Aplicação/Período</th>
+                                        <th>Tipo</th>
+                                        <th>Valor</th>
+                                        <th>Disciplina</th>
+                                        <th>Bimestre</th>
+                                        <th>Turma</th>
+                                        <th>Editar</th>
+                                        <th>Excluir</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                </tbody>
+                            </table>
+                            <button onclick="addRow('bimestralTable')">+ Adicionar Atividade</button>
+                        </div>
+                        <button id="save-avalia">Salvar</button>
+                    </div>
+                </div>
+            </section>
+
+            
+            <section class="pontuacoes">
+                <div id="popup-pontuacoes" class="popup-pontuacoes">
+                    <div class="popup-content-pont">
+                        <span class="close-pont" id="closePopup-pont">&times;</span>
+                        <h2>Tabelas de Pontuações</h2>
+                        <p>Registre as notas dos alunos e suas participações em atividades. Lembre-se de filtrar a turma, bimestre e disciplina desejada.</p>
+
+                        <div class="fil-pont">
+                            <select name="disc-pont" id="disc-pont">
+                                <option value="Geografia">Geografia</option>
+                                <option value="Matemática">Matemática</option>
+                                <option value="Física">Física</option>
+                                <option value="História">História</option>
+                            </select>
+                            <select name="turma-pont" id="turma-pont">
+                                <option value="3I">3I</option>
+                                <option value="3J">3J</option>
+                                <option value="3K">3K</option>
+                                <option value="2I">2I</option>
+                            </select>
+                            <select name="bim-pont" id="bim-pont">
+                                <option value="1BIM">1BIM</option>
+                                <option value="2BIM">2BIM</option>
+                                <option value="3BIM">3BIM</option>
+                                <option value="4BIM">4BIM</option>
+                            </select>
+                        </div>
+                        <h4>Avaliações Mensais</h4>
+                        <table class="scores" id="scoreTableMensal">
+                            <thead>
+                                <tr>
+                                    <th>Número</th>
+                                    <th>Nome</th>
+                                    <th>Turma</th>
+                                    <th>Disciplina</th>
+                                    <th>Bimestre</th>
+                                    <!-- Colunas de atividades serão inseridas dinamicamente aqui -->
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>1</td>
+                                    <td>Ana Julia Mendonça</td>
+                                    <td>3I</td>
+                                    <td>Geografia</td>
+                                    <td>1BIM</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <h4>Roteiros de Aprendizagem (R.E.C)</h4>
+                        <table class="scores" id="scoreTableRoteiro">
+                            <thead>
+                                <tr>
+                                    <th>Número</th>
+                                    <th>Nome</th>
+                                    <th>Turma</th>
+                                    <th>Disciplina</th>
+                                    <th>Bimestre</th>
+                                    <!-- Colunas de atividades serão inseridas dinamicamente aqui -->
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>1</td>
+                                    <td>Ana Julia Mendonça</td>
+                                    <td>3I</td>
+                                    <td>Geografia</td>
+                                    <td>1BIM</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <h4>Avaliações Bimestrais</h4>
+                        <table class="scores" id="scoreTableBimestral">
+                            <thead>
+                                <tr>
+                                    <th>Número</th>
+                                    <th>Nome</th>
+                                    <th>Turma</th>
+                                    <th>Disciplina</th>
+                                    <th>Bimestre</th>
+                                    <!-- Colunas de atividades serão inseridas dinamicamente aqui -->
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>1</td>
+                                    <td>Ana Julia Mendonça</td>
+                                    <td>3I</td>
+                                    <td>Geografia</td>
+                                    <td>1BIM</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <button id="savePontuacoes">Salvar Pontuações</button>
+
+                    </div>
+                </div>
+            </section>            
+            
+            
+        </main>
+    </div>
+    <section id="popup" class="popup">
+        <div class="modal-help">
+            <h2>Precisa de Ajuda?</h2>
+            <hr>
+            <div class="modal-help-content">
+                <p>Bem vindo(a) à página de Lançamento de Notas! Por aqui você pode personalizar suas avaliações, registrar a pontuação dos seus alunos nas atividades e calcular médias finais!</p>
+                <hr>
+                <p>Para acessar suas avaliações e registrar seus atributos clique no botão "Personalizar Avaliações", você será dirigido até as tabelas de Mensais, Roteiros de Aprendizagem (R.E.C) e Bimestrais.</p>
+                <img src="help-avalia-perso.png" alt="">
+                <p>Clicando no botão "Adicionar Atividade", você acrescentará uma nova atividade avaliativa na tabela, podendo determinar um nome, data de aplicação, valor e tipo de atividade. Assim como o exemplo:</p>
+                <img src="help-tableexemple.png" alt="">
+                <p>Não se esqueça de salvar suas alterações!</p>
+                <hr>
+                <p>Para acessar as pontuações dos alunos, clique no botão "Pontuações", você será dirigido até a tabela de pontuações.</p>
+                <p>Assim, você irá visualizar as tabelas de pontuações de mensais, bimestrais e roteiros de aprendizagem. Suas avaliaçōes serāo automaticamete acrescentadas na tabela, então para registrar os pontos é só digitar nas céluas e salvar.</p>
+                <img src="help-tablepont.png" alt="">
+                <hr>
+                <p>Por fim para visualizar todas as notas na tabela geral, utilize os filtros localizados no centro da página.</p>
+                <img src="help-filcontainer.png" alt="">
+                <p>Com a tabela aberta, você poderá editar caso seja necessário e calcular médias automaticamete.</p>
+                <p>Seguindo um esquema de cores, você também pode visualizar o desempenho dos seus alunos</p>
+                <p>Aqueles com médias finais verdes atingiram notas superiores a média escolar sem problemas, já aqueles com médias finais amarelas precisaram utilizar pontos de REC para atingir a pontuação média, por fim, aqueles com médias finais vermelhas não chegaram acima média escolar.</p>
+                <img src="help-colors.png" alt="" id="minimg">
+                <p>Ainda com dúvidas? Contate o suporte técnico com o botão a seguir:<button id="suporte"><img src="suporte.png" alt="-"></button>
+                </p>
+            </div>
+            <button id="ok-help" onclick="handlePopup(false)" type="submit">OK</button>
+        </div>
+    </section>
+<footer>
+    <img src="tformbranco-logovetor.svg" alt="">&copy; 2024 TRANSFORMA | Todos os direitos reservados
+</footer>
+<script src="lancamento_notas.js"></script>
+</body>
+</html>

@@ -1,0 +1,686 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    text-decoration: none;
+
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background-color: #e3e9f7;
+}
+
+main {
+    display: flex;    
+    flex-direction: column;
+    padding: 2%;
+    margin-bottom: 5%;
+    padding-left: calc(6em + 2%);
+}
+
+.body{
+    display: flex;
+    flex-direction: column;
+}
+/*CABEÇALHO*/
+.notification-button,
+.configuração-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    
+}
+header{
+    display: flex;
+    padding: 1%;
+    justify-content: space-between;
+}
+#pageatual{
+    color: #1A7E90;
+    font-weight: 600;
+}
+.header-left{
+    display: flex;
+    align-items: center;
+    gap: 5%;
+}
+.header-left-ul{
+    display: flex;
+    gap: 9px;
+    font-size: 90%;
+    font-style: normal;
+    text-decoration: none;
+    font-weight: 400;
+    line-height: normal;
+}
+.header-left-ul a{
+    color: #494949;
+}
+.header-ul{
+    display: flex;
+    gap: 10px;
+    cursor: pointer;
+}
+.header-ul button{
+    width: 30px;
+    height: 30px;
+}
+.logo-icon{
+    width: 150px;
+}
+
+
+/*MENU REDUZIDO ACESSO RÁPIDO*/
+
+#sidebar {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: #ffffff;
+    height: 100vh;
+    border-radius: 0px 18px 18px 0px;
+    position: fixed;
+    transition: all .5s;
+    min-width: 82px;
+    z-index: 2;
+}
+
+#sidebar_content {
+    padding: 12px;
+}
+
+#user {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 24px;
+}
+
+#user_avatar {
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+    border-radius: 20px;
+}
+
+#user_infos {
+    display: flex;
+    flex-direction: column;
+}
+
+#user_infos span:last-child {
+    color: #6b6b6b;
+    font-size: 12px;
+}
+
+#side_items {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    list-style: none;
+}
+
+.side-item {
+    border-radius: 8px;
+    padding: 14px;
+    cursor: pointer;
+}
+
+.side-item.active {
+    background-color: #0097B2;
+}
+
+.side-item:hover:not(.active),
+#logout_btn:hover {
+    background-color: #FFF;
+}
+
+.side-item a {
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #0a0a0a;
+}
+
+.side-item.active a {
+    color: #FFF;
+}
+
+.side-item a i {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 20px;
+    height: 20px;
+}
+
+.side-item a i img{
+    width: 20px;
+    height: 20px;
+}
+
+#logout {
+    border-top: 1px solid #e3e9f7;
+    padding: 12px;
+}
+
+#logout_btn {
+    border: none;
+    padding: 12px;
+    font-size: 14px;
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    border-radius: 8px;
+    text-align: start;
+    cursor: pointer;
+    background-color: transparent;
+}
+
+#open_btn {
+    position: absolute;
+    top: 30px;
+    right: -10px;
+    background-color: #0097B2;
+    color: #e3e9f7;
+    border-radius: 100%;
+    width: 40px;
+    height: 40px;
+    border: none;
+    cursor: pointer;
+}
+
+#open_btn_icon {
+    transition: transform .3s ease;
+}
+
+.open-sidebar #open_btn_icon {
+    transform: rotate(180deg);
+}
+
+.item-description {
+    width: 0px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    font-size: 14px;
+    transition: width .6s;
+    height: 0px;
+}
+
+#sidebar.open-sidebar {
+    min-width: 15%;
+}
+
+#sidebar.open-sidebar .item-description {
+    width: 150px;
+    height: auto;
+}
+
+#sidebar.open-sidebar .side-item a {
+    justify-content: flex-start;
+    gap: 14px;
+}
+
+
+/*WELCOME - BANNER PRINCIPAL*/
+
+h2{
+    color: #004450;
+}
+.welcome{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.welcome-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    border-radius: 40px;
+    width: 250%;
+    height: 280px;
+    align-items: center;
+    background: #0097B2;
+    padding: 5%;
+    font-size: 100%;   
+}
+.welcome-container-1{
+    display: flex;
+    color: #FFF;
+    gap: 1em;
+    flex-direction: column;
+}
+.welcome-section{
+    display: flex;
+    flex-direction: row;
+    gap: 2%;
+}
+
+.welcome-right{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+#professor{
+    width: 90%;
+}
+.saibamais{
+    border: none;
+    border-radius: 9px;
+    width: 50%;
+    padding: 3%;
+    background-color: #004450;
+    font-size: small;
+}
+.saibamais a{
+    color: #FFF;
+}
+.pesquisa-input{
+    border-radius: 9px;
+    border: none;
+    padding: 5%;
+    color: #2d2d2d;
+    font-size: smaller;
+    background: #D9D9D9;
+}
+
+.btn-diario {
+    background: #7E81CD;
+    color: #dcddff;
+    border: none;
+    padding: 10%;
+    cursor: pointer;
+    font-size: 95%;
+    border-radius: 9px;
+}
+.btn-diario a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+    color: #ffffff;
+}
+
+/*CALENDÁRIO*/
+.calendar-container {
+    border-radius: 10px;
+    background-color: #FFF;
+    margin-bottom: 3%;
+    margin-top: 3%;
+}
+
+.calendar-header {
+    display: flex;
+    justify-content: space-between;
+    padding: 2%;
+    align-items: center;
+}
+.nav-button {
+    background-color: #85C06E;
+    color: #fff;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.nav-button:hover {
+    background-color: #7eb25f;
+}
+
+#month-year {
+    font-size: x-large;
+    color: #2d2d2d;
+    font-weight: bold;
+}
+
+.calendar {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.calendar-body-div{
+    padding: 2%;
+}
+
+.calendar td {
+    width: 14.28%;
+    height: 80px;
+    text-align: center;
+    padding: 5px;
+    border: 3px solid #c6c6c6;
+    cursor: pointer;
+    border-radius: 3px;
+}
+
+.calendar th{
+    width: 14.28%;
+    height: 80px;
+    text-align: center;
+    padding: 5px;
+    border: 3px solid #c6c6c6;
+    cursor: pointer;
+    border-radius: 3px;
+    background-color: #ffc288;
+}
+
+.calendar .today {
+    color: white;
+    background-color: #85C06E;
+
+}
+
+
+/* Estilo para o modal */
+.modal {
+    width: 40%; /* Largura do modal */
+    display: none; /* Inicialmente oculto */
+    position: fixed; /* Posiciona o modal em relação à janela de visualização */
+    top: 50%; /* Move para o meio da tela verticalmente */
+    left: 50%; /* Move para o meio da tela horizontalmente */
+    transform: translate(-50%, -50%); /* Ajusta a posição para que o centro do modal fique no centro da tela */
+    z-index: 1; /* Mantém o modal acima de outros elementos */
+    box-sizing: border-box;
+    border: none;
+    border-radius: 20px;
+
+}
+.modal-content {
+    display: flex;
+    flex-direction: column;
+    background-color: #ffffff;
+    margin: 5%;
+    padding: 1%;
+}
+#note-text{
+    border-color: #6b6b6b;
+    border-radius: 2px;
+}
+#save-note{
+    margin-top: 5%;
+    border-radius: 4px;
+    padding: 2%;
+    cursor: pointer;
+    text-align: center;
+    color: #FFF;
+    border: none;
+    font-size: 80%;
+    background: #0097B2;
+    width: 30%;
+    height: 20%;}
+
+.close-button {
+    color: #000000;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close-button:hover,
+.close-button:focus {
+    color: black;
+    text-decoration: none;
+}
+
+footer{
+    display: flex;
+    background-color: #004450;
+    padding: 2%;
+    color: #FFF;
+    text-align: center;
+    justify-content: center;
+    gap: 2%;
+    align-items: center;
+}
+footer img{
+    width: 1.5%;
+}
+
+/*PASTAS - TURMAS*/
+.wrapper-pastas-turmas .carousel-pastas-turmas{
+    white-space: nowrap;
+    cursor: pointer;
+    font-size: large;
+    overflow: hidden;
+    scroll-behavior: smooth;
+    font-weight: 800;
+}
+.wrapper-pastas-turmas{
+    max-width: 1080px;
+    position: relative;
+    margin: 1%;
+}
+.wrapper-pastas-turmas i{
+    top: 50%;
+    transform: translateX(-50%);
+    background-color: #c6c6c6;
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    text-align: center;
+    text-decoration: none;
+    position:absolute
+}
+.wrapper-pastas-turmas i:first-child{
+    left: -23px;
+}
+.wrapper-pastas-turmas i:last-child{
+    right: -23px;
+}
+.carousel-pastas-turmas img {
+    object-fit: cover;
+    margin: 10px;
+}
+.carousel-pastas-turmas img:first-child {
+    margin-left: 0px;
+}
+
+.btn-green,
+.btn-blue,
+.btn-yellow,
+.btn-purple,
+.btn-pink{
+    background-color: #e3e9f7;
+    font-size: large;
+    font-weight: 600;
+    color: #000; /* Cor do texto */
+    border: none; /* Remova a borda */
+    cursor: pointer;
+    text-align: center;
+    display: inline-block;
+    position: relative;
+}
+
+
+/*PASTAS - DISCIPLINAS*/
+
+.wrapper-pastas-disc .carousel-pastas-disc{
+    white-space: nowrap;
+    cursor: pointer;
+    font-size: large;
+    overflow: hidden;
+    font-weight: 800;
+    scroll-behavior: smooth;
+}
+.wrapper-pastas-disc{
+    max-width: 1080px;
+    position: relative;
+    margin: 1%;
+}
+.wrapper-pastas-disc i{
+    display: flex;
+    top: 50%;
+    transform: translateX(-50%);
+    background-color: #c6c6c6;
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    justify-content: center;
+    text-decoration: none;
+    position:absolute
+}
+.wrapper-pastas-disc i:first-child{
+    left: -23px;
+}
+.wrapper-pastas-disc i:last-child{
+    right: -23px;
+}
+.carousel-pastas-disc img {
+    object-fit: cover;
+    margin: 10px;
+}
+.carousel-pastas-disc img:first-child {
+    margin-left: 0px;
+}
+
+
+/*MIDIAS */
+
+@media screen and (max-width:900px) {
+    .welcome-section{
+        display: flex;
+        flex-direction: column;
+    }
+    .welcome{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        border-radius: 40px;
+        gap: 3%;
+    }
+    .welcome-container{
+        display: flex;
+        padding: 30px;
+        width: 100%;
+        height: 280px;
+
+    }
+    .welcome-right{
+        margin-top: 10%;
+        width: 100%
+    }
+    .select-turmas-pastas,
+    .select-disciplinas-pastas{
+        width: 35%;
+    }
+    
+    .modal{
+        width: 300px;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+/*MODO ESCURO CODE*/
+body.dark-mode {
+    background-color: #131721;
+    color: #e3e9f7;
+}
+
+body.dark-mode header {
+    background-color: #131721;
+    color: #e3e9f7;
+}
+
+body.dark-mode h2{
+    color: #0097B2;
+}
+
+body.dark-mode #sidebar {
+    background-color: #22272F;
+}
+
+body.dark-mode .welcome-container {
+    background-color: #0097B2;
+}
+
+body.dark-mode .btn-green,
+body.dark-mode .btn-blue,
+body.dark-mode .btn-yellow,
+body.dark-mode .btn-purple,
+body.dark-mode .btn-pink {
+    background-color: #131721;
+    color: #e3e9f7;
+}
+
+body.dark-mode .calendar-container {
+    background-color: #22272F;
+    color: white;
+}
+body.dark-mode .calendar-header {
+    background-color: #22272F;
+    border-radius: 24px;
+    color: #e3e9f7;
+}
+body.dark-mode #month-year {
+    color: #e3e9f7
+}
+body.dark-mode .nav-button {
+    background-color: #555;
+    color: #e3e9f7;
+}
+
+body.dark-mode .modal{
+    background-color: #555;
+
+}
+
+body.dark-mode .modal-content{
+    background-color: #555;
+    color: #0097B2;
+}
+#themeToggle img {
+    width: 30px;
+    height: 30px;
+    display: block;
+}
+
+#themeToggle {
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    outline: none; 
+}
+
+/*BARRA DE PESQUISA*/
+#searchBar {
+    width: 300px;
+    padding: 10px;
+    font-size: 16px;
+}
+
+#resultList {
+    list-style-type: none;
+    padding: 0;
+}
+
+#resultList li {
+    padding: 5px;
+    border: 1px solid #ddd;
+    margin-top: -1px;
+    cursor: pointer;
+}
+
+#resultList li:hover {
+    background-color: #f1f1f1;
+}

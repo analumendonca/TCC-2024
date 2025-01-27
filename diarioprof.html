@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html lang="PT-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PROF</title>
+    <link rel="stylesheet" href="diarioprof.css">
+</head>
+<body>
+    <header>
+        <div class="header-left"> 
+            <img class="logo-icon" alt="Logo" src="logoprof.svg">
+            <nav>
+                <ul class="header-left-ul">
+                    <a href="dashborad.html">Dashboard</a>
+                    <a id="pageatual" href="diarioprof.html"> > Diário do Professor</a>
+                </ul>
+            </nav>
+        </div>
+        <nav>
+            <ul class="header-ul">
+                <button id="themeToggle">
+                    <img id="themeIcon" src="sol.svg" alt="Sun Icon">
+                </button>
+                <button class="notification-button">
+                    <img class="iconoirbell-notification" alt="Notificações" src="icon-noti.svg">
+                </button>
+
+                <button class="configuração-button">
+                    <img class="summer-icon" alt="Ícone de verão" src="summer.svg">
+                </button>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="body">
+        <nav id="sidebar">
+            <div id="sidebar_content">
+                <div id="user">
+                    <img src="image.png" id="user_avatar" alt="Avatar">
+        
+                    <p id="user_infos">
+                        <span class="item-description">
+                            Fulano de Tal
+                        </span>
+                        <span class="item-description">
+                            Lorem Ipsum
+                        </span>
+                    </p>
+                </div>
+        
+                <ul id="side_items">
+                    <li class="side-item">
+                        <a href="dashborad.html">
+                            <i><img src="dashhome.svg" alt=""></i>
+                            <span class="item-description">
+                                Dashboard
+                            </span>
+                        </a>
+                    </li>
+        
+                    <li class="side-item">
+                        <a href="disciplinas.html">
+                            <i><img src="discbook.svg" alt=""></i>
+                            <span class="item-description">
+                                Disciplinas
+                            </span>
+                        </a>
+                    </li>
+        
+                    <li class="side-item">
+                        <a href="registro_de_presencas.html">
+                            <i><img src="prescheck.svg" alt=""></i>
+                            <span class="item-description">
+                                Registro de Presenças
+                            </span>
+                        </a>
+                    </li>
+        
+                    <li class="side-item">
+                        <a href="lancamento_notas.html">
+                            <i><img src="notasdoc.svg" alt=""></i>
+                            <span class="item-description">
+                                Lançamento de Notas
+                            </span>
+                        </a>
+                    </li>
+        
+                    <li class="side-item">
+                        <a href="prog_cont.html">
+                            <i><img src="progpen.svg" alt=""></i>
+                            <span class="item-description">
+                                Programação de Conteúdos
+                            </span>
+                        </a>
+                    </li>
+ 
+                    <li class="side-item active">
+                        <a href="diarioprof.html">
+                            <i><img src="diarioavatar.svg" alt=""></i>
+                            <span class="item-description">
+                                Diário do Professor
+                            </span>
+                        </a>
+                    </li>
+                    <li class="side-item">
+                        <a href="alunos.html">
+                            <i><img src="crianalunos.svg" alt=""></i>
+                            <span class="item-description">
+                                Alunos
+                            </span>
+                        </a>
+                    </li>
+                    <li class="side-item">
+                        <a href="relatorios.html">
+                            <i><img src="relabox.svg" alt=""></i>
+                            <span class="item-description">
+                                Relatórios
+                            </span>
+                        </a>
+                    </li>
+                </ul>
+        
+                <button id="open_btn">
+                    <i id="open_btn_icon">></i>
+                </button>
+            </div>
+        </nav>
+        <main>
+            <div class="titulo">
+                <h2>Diário do Professor</h2> 
+                <button id="help" type="submit" onclick="handlePopup(true)">?</button>
+            </div>
+            <section class="welcome-section">
+                <div class="welcome-container">
+                    <div class="welcome-container-1">
+                        <h3>Diário do Professor</h3>
+                        <p>Aqui você registra o seu dia a dia.
+                           Registre tudo o que aconteceu em sala de aula e mais!</p>
+                    </div>
+                    <div class="welcome-container-2">
+                        <img id="time" src="time.png" alt="">
+                    </div>
+                </div>
+            </section>
+
+            <section class="adm-dia">
+                <h4>Selecione o dia para prosseguir:</h4>
+                <section class="calendar-section">
+                    <article class="calendar-container">
+                        <header class="calendar-header">
+                            <button id="prev-month" class="nav-button">&lt;</button>
+                            <time id="month-year"></time>
+                            <button id="next-month" class="nav-button">&gt;</button>
+                        </header>
+                        <div class="calendar-body-div">
+                            <table class="calendar">
+                                <thead>
+                                    <tr>
+                                        <th>Dom</th>
+                                        <th>Seg</th>
+                                        <th>Ter</th>
+                                        <th>Qua</th>
+                                        <th>Qui</th>
+                                        <th>Sex</th>
+                                        <th>Sáb</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="calendar-body"></tbody>
+                            </table>
+                        </div>
+                    </article>
+                </section>
+            </section>
+            <dialog id="content-modal" class="modal">
+                <div class="modal-content">
+                    <div>
+                        <span class="close-content-modal">&times;</span>
+                        <h2>Controle de Conteúdos</h2>
+                        <div class="today-date">
+                            <h2 id="today-date"></h2>
+                        </div>
+                    </div>
+                    <!-- Aula 1 -->
+                    <div class="aula1">
+                        <h4>1º Aula</h4>
+                        <h5>Turmas:</h5>
+                        <div class="dropdowns">
+                            <select id="turmas1" class="dropdown">
+                                <option value="3i">3ºI</option>
+                                <option value="3j">3ºJ</option>
+                                <option value="3k">3ºK</option>
+                                <option value="2i">2ºI</option>
+                                <option value="2j">2ºJ</option>
+                                <option value="2k">2ºK</option>
+                                <option value="1i">1ºI</option>
+                                <option value="1j">1ºJ</option>
+                                <option value="1k">1ºK</option>
+                            </select>
+                        </div>
+                        <h5>Disciplina:</h5>
+                        <div class="dropdowns">
+                            <select id="disciplinas1" class="dropdown">
+                                <option value="geo">Geografia</option>
+                                <option value="mat">Matemática</option>
+                                <option value="hist">História</option>
+                                <option value="fis">Física</option>
+                            </select>
+                        </div>
+                        <div class="diario-view-container">
+                            <div class="diario-view-conteudo">
+                                <h1>Conteúdo</h1>
+                                <textarea id="content-text1" rows="4"></textarea>
+                                <h1>Dinâmica</h1>
+                                <div class="input-box">
+                                    <input id="prova1" type="checkbox" name="prova">
+                                    <label for="prova1">Prova Avaliativa</label>
+                                </div>
+                                <div class="input-box">
+                                    <input id="exercicios1" type="checkbox" name="exercicios">
+                                    <label for="exercicios1">Exercícios</label>
+                                </div>
+                                <div class="input-box">
+                                    <input id="aprese1" type="checkbox" name="aprese">
+                                    <label for="aprese1">Apresentação</label>
+                                </div>
+                                <div class="input-box">
+                                    <input id="video1" type="checkbox" name="video">
+                                    <label for="video1">Vídeo/Filme Educativo</label>
+                                </div>
+                                <div class="input-box">
+                                    <input id="jogo1" type="checkbox" name="jogo">
+                                    <label for="jogo1">Jogo Educativo</label>
+                                </div>
+                                <div class="input-box">
+                                    <input id="seminario1" type="checkbox" name="seminario">
+                                    <label for="seminario1">Seminário dos Alunos</label>
+                                </div>
+                            </div>
+                            <div class="diario-view-obs">
+                                <h1>Observações e Ocorrências</h1>
+                                <textarea id="obsocorr1" rows="10"></textarea>
+                            </div>
+                        </div>
+                    </div>
+                    <hr>
+                    <!-- Aula 2 -->
+                    <div class="aula2">
+                        <h4>2º Aula</h4>
+                        <h5>Turma:</h5>
+                        <div class="dropdowns">
+                            <select id="turmas2" class="dropdown">
+                                <option value="3i">3ºI</option>
+                                <option value="3j">3ºJ</option>
+                                <option value="3k">3ºK</option>
+                                <option value="2i">2ºI</option>
+                                <option value="2j">2ºJ</option>
+                                <option value="2k">2ºK</option>
+                                <option value="1i">1ºI</option>
+                                <option value="1j">1ºJ</option>
+                                <option value="1k">1ºK</option>
+                            </select>
+                        </div>
+                        <h5>Disciplina:</h5>
+                        <div class="dropdowns">
+                            <select id="disciplinas2" class="dropdown">
+                                <option value="geo">Geografia</option>
+                                <option value="mat">Matemática</option>
+                                <option value="hist">História</option>
+                                <option value="fis">Física</option>
+                            </select>
+                        </div>
+                        <div class="diario-view-container">
+                            <div class="diario-view-conteudo">
+                                <h1>Conteúdo</h1>
+                                <textarea id="content-text2" rows="4"></textarea>
+                                <h1>Dinâmica</h1>
+                                <div class="input-box">
+                                    <input id="prova2" type="checkbox" name="prova">
+                                    <label for="prova2">Prova Avaliativa</label>
+                                </div>
+                                <div class="input-box">
+                                    <input id="exercicios2" type="checkbox" name="exercicios">
+                                    <label for="exercicios2">Exercícios</label>
+                                </div>
+                                <div class="input-box">
+                                    <input id="aprese2" type="checkbox" name="aprese">
+                                    <label for="aprese2">Apresentação</label>
+                                </div>
+                                <div class="input-box">
+                                    <input id="video2" type="checkbox" name="video">
+                                    <label for="video2">Vídeo/Filme Educativo</label>
+                                </div>
+                                <div class="input-box">
+                                    <input id="jogo2" type="checkbox" name="jogo">
+                                    <label for="jogo2">Jogo Educativo</label>
+                                </div>
+                                <div class="input-box">
+                                    <input id="seminario2" type="checkbox" name="seminario">
+                                    <label for="seminario2">Seminário dos Alunos</label>
+                                </div>
+                            </div>
+                            <div class="diario-view-obs">
+                                <h1>Observações e Ocorrências</h1>
+                                <textarea id="obsocorr2" rows="10"></textarea>
+                            </div>
+                        </div>
+                    </div>
+                    <hr>
+                    <!-- Aula 3 -->
+                    <div class="aula3">
+                        <h4>3º Aula</h4>
+                        <h5>Turma:</h5>
+                        <div class="dropdowns">
+                            <select id="turmas3" class="dropdown">
+                                <option value="3i">3ºI</option>
+                                <option value="3j">3ºJ</option>
+                                <option value="3k">3ºK</option>
+                                <option value="2i">2ºI</option>
+                                <option value="2j">2ºJ</option>
+                                <option value="2k">2ºK</option>
+                                <option value="1i">1ºI</option>
+                                <option value="1j">1ºJ</option>
+                                <option value="1k">1ºK</option>
+                            </select>
+                        </div>
+                        <h5>Disciplina:</h5>
+                        <div class="dropdowns">
+                            <select id="disciplinas3" class="dropdown">
+                                <option value="geo">Geografia</option>
+                                <option value="mat">Matemática</option>
+                                <option value="hist">História</option>
+                                <option value="fis">Física</option>
+                            </select>
+                        </div>
+                        <div class="diario-view-container">
+                            <div class="diario-view-conteudo">
+                                <h1>Conteúdo</h1>
+                                <textarea id="content-text3" rows="4"></textarea>
+                                <h1>Dinâmica</h1>
+                                <div class="input-box">
+                                    <input id="prova3" type="checkbox" name="prova">
+                                    <label for="prova3">Prova Avaliativa</label>
+                                </div>
+                                <div class="input-box">
+                                    <input id="exercicios3" type="checkbox" name="exercicios">
+                                    <label for="exercicios3">Exercícios</label>
+                                </div>
+                                <div class="input-box">
+                                    <input id="aprese3" type="checkbox" name="aprese">
+                                    <label for="aprese3">Apresentação</label>
+                                </div>
+                                <div class="input-box">
+                                    <input id="video3" type="checkbox" name="video">
+                                    <label for="video3">Vídeo/Filme Educativo</label>
+                                </div>
+                                <div class="input-box">
+                                    <input id="jogo3" type="checkbox" name="jogo">
+                                    <label for="jogo3">Jogo Educativo</label>
+                                </div>
+                                <div class="input-box">
+                                    <input id="seminario3" type="checkbox" name="seminario">
+                                    <label for="seminario3">Seminário dos Alunos</label>
+                                </div>
+                            </div>
+                            <div class="diario-view-obs">
+                                <h1>Observações e Ocorrências</h1>
+                                <textarea id="obsocorr3" rows="10"></textarea>
+                            </div>
+                        </div>
+                    </div>
+                    <hr>
+                    <!-- Aula 4 -->
+                    <div class="aula4">
+                        <h4>4º Aula</h4>
+                        <h5>Turma:</h5>
+                        <div class="dropdowns">
+                            <select id="turmas4" class="dropdown">
+                                <option value="3i">3ºI</option>
+                                <option value="3j">3ºJ</option>
+                                <option value="3k">3ºK</option>
+                                <option value="2i">2ºI</option>
+                                <option value="2j">2ºJ</option>
+                                <option value="2k">2ºK</option>
+                                <option value="1i">1ºI</option>
+                                <option value="1j">1ºJ</option>
+                                <option value="1k">1ºK</option>
+                            </select>
+                        </div>
+                        <h5>Disciplina:</h5>
+                        <div class="dropdowns">
+                            <select id="disciplinas4" class="dropdown">
+                                <option value="geo">Geografia</option>
+                                <option value="mat">Matemática</option>
+                                <option value="hist">História</option>
+                                <option value="fis">Física</option>
+                            </select>
+                        </div>
+                        <div class="diario-view-container">
+                            <div class="diario-view-conteudo">
+                                <h1>Conteúdo</h1>
+                                <textarea id="content-text4" rows="4"></textarea>
+                                <h1>Dinâmica</h1>
+                                <div class="input-box">
+                                    <input id="prova4" type="checkbox" name="prova">
+                                    <label for="prova4">Prova Avaliativa</label>
+                                </div>
+                                <div class="input-box">
+                                    <input id="exercicios4" type="checkbox" name="exercicios">
+                                    <label for="exercicios4">Exercícios</label>
+                                </div>
+                                <div class="input-box">
+                                    <input id="aprese4" type="checkbox" name="aprese">
+                                    <label for="aprese4">Apresentação</label>
+                                </div>
+                                <div class="input-box">
+                                    <input id="video4" type="checkbox" name="video">
+                                    <label for="video4">Vídeo/Filme Educativo</label>
+                                </div>
+                                <div class="input-box">
+                                    <input id="jogo4" type="checkbox" name="jogo">
+                                    <label for="jogo4">Jogo Educativo</label>
+                                </div>
+                                <div class="input-box">
+                                    <input id="seminario4" type="checkbox" name="seminario">
+                                    <label for="seminario4">Seminário dos Alunos</label>
+                                </div>
+                            </div>
+                            <div class="diario-view-obs">
+                                <h1>Observações e Ocorrências</h1>
+                                <textarea id="obsocorr4" rows="10"></textarea>
+                            </div>
+                        </div>
+                    </div>
+                    <hr>
+                    <!-- Aula 5 -->
+                    <div class="aula5">
+                        <h4>5º Aula</h4>
+                        <h5>Turma:</h5>
+                        <div class="dropdowns">
+                            <select id="turmas5" class="dropdown">
+                                <option value="3i">3ºI</option>
+                                <option value="3j">3ºJ</option>
+                                <option value="3k">3ºK</option>
+                                <option value="2i">2ºI</option>
+                                <option value="2j">2ºJ</option>
+                                <option value="2k">2ºK</option>
+                                <option value="1i">1ºI</option>
+                                <option value="1j">1ºJ</option>
+                                <option value="1k">1ºK</option>
+                            </select>
+                        </div>
+                        <h5>Disciplina:</h5>
+                        <div class="dropdowns">
+                            <select id="disciplinas5" class="dropdown">
+                                <option value="geo">Geografia</option>
+                                <option value="mat">Matemática</option>
+                                <option value="hist">História</option>
+                                <option value="fis">Física</option>
+                            </select>
+                        </div>
+                        <div class="diario-view-container">
+                            <div class="diario-view-conteudo">
+                                <h1>Conteúdo</h1>
+                                <textarea id="content-text5" rows="4"></textarea>
+                                <h1>Dinâmica</h1>
+                                <div class="input-box">
+                                    <input id="prova5" type="checkbox" name="prova">
+                                    <label for="prova5">Prova Avaliativa</label>
+                                </div>
+                                <div class="input-box">
+                                    <input id="exercicios5" type="checkbox" name="exercicios">
+                                    <label for="exercicios5">Exercícios</label>
+                                </div>
+                                <div class="input-box">
+                                    <input id="aprese5" type="checkbox" name="aprese">
+                                    <label for="aprese5">Apresentação</label>
+                                </div>
+                                <div class="input-box">
+                                    <input id="video5" type="checkbox" name="video">
+                                    <label for="video5">Vídeo/Filme Educativo</label>
+                                </div>
+                                <div class="input-box">
+                                    <input id="jogo5" type="checkbox" name="jogo">
+                                    <label for="jogo5">Jogo Educativo</label>
+                                </div>
+                                <div class="input-box">
+                                    <input id="seminario5" type="checkbox" name="seminario">
+                                    <label for="seminario5">Seminário dos Alunos</label>
+                                </div>
+                            </div>
+                            <div class="diario-view-obs">
+                                <h1>Observações e Ocorrências</h1>
+                                <textarea id="obsocorr5" rows="10"></textarea>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="botoes">
+                        <button id="save-content" class="button">Salvar</button>
+                        <button class="coord"><img src="whiteplane.png" alt="">Enviar para a Coordenação</button>
+                    </div>
+                </div>
+            </dialog>
+            
+        </main>
+    </div>
+
+    <section id="popup" class="popup">
+        <div class="modal-help">
+            <h2>Precisa de Ajuda?</h2>
+            <hr>
+            <div class="modal-help-content">   
+                <p>Bem vindo ao diário do professor! Aqui você pode registrar todos os acontecimentos das suas aulas. </p>
+                <hr>
+                <p>Para iniciar, selecione o dia referente no calendário:</p>
+                <img src="help-calendardiary.png" alt="">
+                <hr>
+                <p>Com o dia selecionado, o controle de conteúdos será aberto, e você poderá anotar com facilidade seus conteúdos, dinâmicas e observações.</p>
+                <img src="help-controlediario.png" alt="">
+                <p>Lembre-se de sempre preencher a turma em que você está e a disciplina que está sendo aplicada!</p>
+                <hr>
+                <p>Quando terminar de fazer as suas anotações, clique no botão "SALVAR".</p>
+                <img src="help-savediario.png" alt="">
+                <hr>
+                <p>Ainda com dúvidas? Contate o suporte técnico com o botão a seguir:<button id="suporte"><img src="suporte.png" alt="-"></button>
+                </p>
+            </div>
+            <button id="ok-help" onclick="handlePopup(false)" type="submit">OK</button>
+        </div>
+    </section>
+<footer>
+    <img src="tformbranco-logovetor.svg" alt="">&copy; 2024 TRANSFORMA | Todos os direitos reservados
+</footer>
+<script src="diarioprof.js"></script>
+</body>
+</html>

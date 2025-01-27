@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="PT-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PROF</title>
+    <link rel="stylesheet" href="alunos.css">
+</head>
+<body>
+    <header>
+        <div class="header-left"> 
+            <img class="logo-icon" alt="Logo" src="logoprof.svg">
+            <nav>
+                <ul class="header-left-ul">
+                    <a href="dashborad.html">Dashboard</a>
+                    <a id="pageatual" href="alunos.html"> > Alunos</a>
+                </ul>
+            </nav>
+        </div>
+        <nav>
+            <ul class="header-ul">
+                <button id="themeToggle">
+                    <img id="themeIcon" src="sol.svg" alt="Sun Icon">
+                </button>
+                <button class="notification-button">
+                    <img class="iconoirbell-notification" alt="Notificações" src="icon-noti.svg">
+                </button>
+
+                <button class="configuração-button">
+                    <img class="summer-icon" alt="Ícone de verão" src="summer.svg">
+                </button>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="body">
+        <nav id="sidebar">
+            <div id="sidebar_content">
+                <div id="user">
+                    <img src="image.png" id="user_avatar" alt="Avatar">
+        
+                    <p id="user_infos">
+                        <span class="item-description">
+                            Fulano de Tal
+                        </span>
+                        <span class="item-description">
+                            Lorem Ipsum
+                        </span>
+                    </p>
+                </div>
+        
+                <ul id="side_items">
+                    <li class="side-item">
+                        <a href="dashborad.html">
+                            <i><img src="dashhome.svg" alt=""></i>
+                            <span class="item-description">
+                                Dashboard
+                            </span>
+                        </a>
+                    </li>
+        
+                    <li class="side-item">
+                        <a href="disciplinas.html">
+                            <i><img src="discbook.svg" alt=""></i>
+                            <span class="item-description">
+                                Disciplinas
+                            </span>
+                        </a>
+                    </li>
+        
+                    <li class="side-item">
+                        <a href="registro_de_presencas.html">
+                            <i><img src="prescheck.svg" alt=""></i>
+                            <span class="item-description">
+                                Registro de Presenças
+                            </span>
+                        </a>
+                    </li>
+        
+                    <li class="side-item">
+                        <a href="lancamento_notas.html">
+                            <i><img src="notasdoc.svg" alt=""></i>
+                            <span class="item-description">
+                                Lançamento de Notas
+                            </span>
+                        </a>
+                    </li>
+        
+                    <li class="side-item">
+                        <a href="prog_cont.html">
+                            <i><img src="progpen.svg" alt=""></i>
+                            <span class="item-description">
+                                Programação de Conteúdos
+                            </span>
+                        </a>
+                    </li>
+
+                    <li class="side-item">
+                        <a href="diarioprof.html">
+                            <i><img src="diarioavatar.svg" alt=""></i>
+                            <span class="item-description">
+                                Diário do Professor
+                            </span>
+                        </a>
+                    </li>
+                    <li class="side-item active">
+                        <a href="alunos.html">
+                            <i><img src="crianalunos.svg" alt=""></i>
+                            <span class="item-description">
+                                Alunos
+                            </span>
+                        </a>
+                    </li>
+                    <li class="side-item">
+                        <a href="relatorios.html">
+                            <i><img src="relabox.svg" alt=""></i>
+                            <span class="item-description">
+                                Relatórios
+                            </span>
+                        </a>
+                    </li>
+                </ul>
+        
+                <button id="open_btn">
+                    <i id="open_btn_icon">></i>
+                </button>
+            </div>
+        </nav>
+        <main>
+            <div class="titulo">
+                <h2>Alunos</h2> 
+                <button id="help" type="submit" onclick="handlePopup(true)">?</button>
+            </div>
+            <section class="welcome-section">
+                <div class="welcome-container">
+                    <div class="welcome-container-1">
+                        <h3>Alunos</h3>
+                        <p>Acesse o perfil de cada aluno individualmente.</p>
+                    </div>
+                    <div class="welcome-container-2">
+                        <img id="professora" src="moca.png" alt="">
+                    </div>
+                </div>
+            </section>
+            <section>
+                <div class="dropdowns">
+                    <select id="salas" class="dropdown" onchange="filterTable()">
+                        <option value="3i">3I</option>
+                        <option value="3j">3J</option>
+                        <option value="3k">3K</option>
+                    </select>
+                </div>
+            </section>
+            <section> 
+                <div class="container">
+                    <div class="container-top-bar">
+                        <input type="search" class="barra-procurar" id="searchInput" placeholder="Pesquisar por nome do aluno..." onkeyup="searchTable()">
+                        <button class="btn-relatorio">Procurar</button>
+                    </div>
+                    <table id="alunosTable">
+                        <thead>
+                            <tr>
+                                <th>Foto</th>
+                                <th>Número</th>
+                                <th>Nome</th>
+                                <th>Turma</th>
+                                <th>Matrícula</th>
+                                <th>Desempenho</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><img src="image.png" alt="" class="perfilImg"></td>
+                                <td>1</td>
+                                <td>Ana Julia Mendonça</td>
+                                <td>3I</td>
+                                <td>3920193</td>
+                                <td><button class="btn-acess"><a href="perfildoaluno.html">Acessar</a></button></td>
+                            </tr>
+                            <tr>
+                                <td><img src="image.png" alt="" class="perfilImg"></td>
+                                <td>2</td>
+                                <td>Ana Luisa Mendonça</td>
+                                <td>3I</td>
+                                <td>4567883</td>
+                                <td><button class="btn-acess"><a href="perfildoaluno.html">Acessar</a></button></td>                            </tr>
+                            <tr>
+                                <td><img src="image.png" alt="" class="perfilImg"></td>
+                                <td>3</td>
+                                <td>Anne Rodrigues</td>
+                                <td>3I</td>
+                                <td>5763119</td>
+                                <td><button class="btn-acess"><a href="perfildoaluno.html">Acessar</a></button></td>                            </tr>
+                            <tr>
+                                <td><img src="image.png" alt="" class="perfilImg"></td>
+                                <td>4</td>
+                                <td>Beatriz Cavalcante</td>
+                                <td>3I</td>
+                                <td>7154017</td>
+                                <td><button class="btn-acess"><a href="perfildoaluno.html">Acessar</a></button></td>                            </tr>
+                            <tr>
+                                <td><img src="image.png" alt="" class="perfilImg"></td>
+                                <td>5</td>
+                                <td>Giovana Castilho</td>
+                                <td>3I</td>
+                                <td>6329053</td>
+                                <td><button class="btn-acess"><a href="perfildoaluno.html">Acessar</a></button></td>                            </tr>
+                            <tr>
+                                <td><img src="image.png" alt="" class="perfilImg"></td>
+                                <td>6</td>
+                                <td>Giovanna Marine</td>
+                                <td>3I</td>
+                                <td>6518884</td>
+                                <td><button class="btn-acess"><a href="perfildoaluno.html">Acessar</a></button></td>                            </tr>
+                            <tr>
+                                <td><img src="image.png" alt="" class="perfilImg"></td>
+                                <td>7</td>
+                                <td>Gustavo Siqueira</td>
+                                <td>3I</td>
+                                <td>0184619</td>
+                                <td><button class="btn-acess"><a href="perfildoaluno.html">Acessar</a></button></td>                            </tr>
+                            <tr>
+                                <td><img src="image.png" alt="" class="perfilImg"></td>
+                                <td>8</td>
+                                <td>Isabelly Amorim</td>
+                                <td>3I</td>
+                                <td>4590021</td>
+                                <td><button class="btn-acess"><a href="perfildoaluno.html">Acessar</a></button></td>                            </tr>
+                            <tr>
+                                <td><img src="image.png" alt="" class="perfilImg"></td>
+                                <td>9</td>
+                                <td>Julia Façanha</td>
+                                <td>3I</td>
+                                <td>8436731</td>
+                                <td><button class="btn-acess"><a href="perfildoaluno.html">Acessar</a></button></td>                            </tr>
+                            <tr>
+                                <td><img src="image.png" alt="" class="perfilImg"></td>
+                                <td>10</td>
+                                <td>Mariana Lohanne</td>
+                                <td>3I</td>
+                                <td>9525421</td>
+                                <td><button class="btn-acess"><a href="perfildoaluno.html">Acessar</a></button></td>                            </tr>
+                            <tr>
+                                <td><img src="image.png" alt="" class="perfilImg"></td>
+                                <td>11</td>
+                                <td>Victhor Noé</td>
+                                <td>3I</td>
+                                <td>1936832</td>
+                                <td><button class="btn-acess"><a href="perfildoaluno.html">Acessar</a></button></td>                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <section id="popup" class="popup">
+        <div class="modal-help">
+            <h2>Precisa de Ajuda?</h2>
+            <hr>
+            <div class="modal-help-content">   
+                <p>Bem vindo(a) a página de acesso aos alunos! Por aqui você pode encontrar o perfil de cada aluno para analizar o seu desempenho ou até mesmo entrar em contato
+                com os seus responsáveis.
+                </p>
+                <hr>
+                <p>Com a barra de pesquisa localizada abaixo, procure pelo nome do aluno desejado e em seguida aperte a tecla ENTER ou clique no botão à direita "Procurar"</p>
+                <img src="help_pesquisaalunos.png" alt="barra-de-pesquisa">
+                <hr>
+                <p>Quando o aluno for encontrado, será possível ver seu número de chamada, nome, matrícula e acessar o seu perfil de desempenho.</p>
+                <img src="help_planilhaalunos.png" alt="">
+                <p>Para acessar o perfil de um aluno, basta clicar no botão "Acessar" na coluna Desempenho da planilha.</p>
+                <hr>
+                <p>Ainda com dúvidas? Contate o suporte técnico com o botão a seguir:<button id="suporte"><img src="suporte.png" alt="-"></button>
+                </p>
+            </div>
+            <button id="ok-help" onclick="handlePopup(false)" type="submit">OK</button>
+        </div>
+    </section>
+<footer>
+    <img src="tformbranco-logovetor.svg" alt="">&copy; 2024 TRANSFORMA | Todos os direitos reservados
+</footer>
+<script src="alunos.js"></script>
+
+</body>
+</html>
